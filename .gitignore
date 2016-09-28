@@ -1,0 +1,6 @@
+*.sln.DotSettings.user
+obj/
+[Bb]in
+*.suo
+*.user
+.vs
