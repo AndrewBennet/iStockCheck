@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Text;
 
 namespace stockcheck {
@@ -16,24 +17,37 @@ namespace stockcheck {
 
         public Colour Colour { get; }
 
-        public static string[] modelIdentifiers = new[] {
-            "?", "9C", "96", "8X", "92", "97", "8Y", "93", "98", "90", "94", "99", "9A", "91", "95",
-            "?", "4V", "51", "4M", "4W", "QM", "4P", "4X", "QN", "4Q", "4Y", "QP", "4U", "50", "QQ"
-        };
+	    public static string[] ModelIdentifiers = {
+
+		    //32  128  256
+
+		    // == iPhone 7 ==
+		    "?", "96", "9C", // jet black
+		    "8X", "92", "97", // black
+		    "8Y", "93", "98", // silver
+		    "90", "94", "99", // gold
+		    "91", "95", "9A", // rose gold
+
+		    // == iPhone 7 Plus ==
+		    "?", "4V", "51", // jet black
+		    "QM", "4M", "4W", // black
+		    "QN", "4P", "4X", // silver
+		    "QP", "4Q", "4Y", // gold
+		    "QQ", "4U", "50" // rose gold
+	    };
 
         public string ToIdentifier() {
-            StringBuilder builder = new StringBuilder("MN");
-            int modelIndex = 15 * (int)IphoneSize + 3 * (int)Colour + (int)StorageSize;
-            return $"MN{modelIdentifiers[modelIndex]}2B/A";
+	        int modelIndex = (int)IphoneSize + (int)Colour + (int)StorageSize;
+            return $"MN{ModelIdentifiers[modelIndex]}2B/A";
         }
 
         public string ToDisplayName() {
             StringBuilder displayName = new StringBuilder();
             switch(IphoneSize) {
-                case IphoneSize.iphone7:
+                case IphoneSize.iPhone7:
                     displayName.Append("iPhone 7 ");
                     break;
-                case IphoneSize.iphone7Plus:
+                case IphoneSize.iPhone7Plus:
                     displayName.Append("iPhone 7 Plus ");
                     break;
             }
@@ -55,13 +69,13 @@ namespace stockcheck {
                     break;
             }
             switch(StorageSize) {
-                case StorageSize.GB32:
+                case StorageSize.Gb32:
                     displayName.Append("32GB");
                     break;
-                case StorageSize.GB128:
+                case StorageSize.Gb128:
                     displayName.Append("128GB");
                     break;
-                case StorageSize.GB256:
+                case StorageSize.Gb256:
                     displayName.Append("256GB");
                     break;
             }
@@ -72,31 +86,46 @@ namespace stockcheck {
             foreach(var iphoneSize in iphoneSizes) {
                 foreach(var size in sizes) {
                     foreach(var colour in colours) {
-                        if(colour != Colour.JetBlack || size != StorageSize.GB32) {
+                        if(colour != Colour.JetBlack || size != StorageSize.Gb32) {
                             yield return new IphoneModel(iphoneSize, size, colour);
                         }
                     }
                 }
             }
         }
+
+	    public static StorageSize StorageSizeFromInt(int size) {
+		    if(size == 32) {
+			    return StorageSize.Gb32;
+		    }
+		    if(size == 128) {
+			    return StorageSize.Gb128;
+		    }
+		    if(size == 256) {
+			    return StorageSize.Gb256;
+		    }
+			throw new InvalidOperationException($"Size {size} is not a valid storage size.");
+	    }
     }
 
     public enum IphoneSize {
-        iphone7 = 0,
-        iphone7Plus = 1
-    }
-
-    public enum StorageSize {
-        GB32 = 0,
-        GB128 = 1,
-        GB256 = 2
-    }
+	    // ReSharper disable InconsistentNaming
+        iPhone7 = 0,
+		iPhone7Plus = 15
+		// ReSharper restore InconsistentNaming
+	}
 
     public enum Colour {
         JetBlack = 0,
-        Black = 1,
-        Silver = 2,
-        Gold = 3,
-        RoseGold = 4
+        Black = 3,
+        Silver = 6,
+        Gold = 9,
+        RoseGold = 12
+    }
+
+    public enum StorageSize {
+        Gb32 = 0,
+        Gb128 = 1,
+        Gb256 = 2
     }
 }

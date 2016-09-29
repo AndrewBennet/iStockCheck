@@ -1,5 +1,10 @@
 ﻿using System;
 using System.Configuration;
+using System.IO;
+using System.Net;
+using System.Net.Http;
+using System.Text;
+using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Threading;
 
@@ -16,6 +21,7 @@ namespace stockcheck {
 		public DateTime LastStockCheck { get; private set; }
 		readonly StockChecker _stockChecker = new StockChecker();
 		private readonly int _sleepTime = int.Parse(ConfigurationManager.AppSettings["sleeptime"]);
+		private readonly string _pushbulletToken = ConfigurationManager.AppSettings["pushbullet-token"];
 
 		private void MainWindow_OnLoaded(object sender, RoutedEventArgs e)
 		{
@@ -33,6 +39,34 @@ namespace stockcheck {
 			{
 				MessageBox.Show(message, $"Stock found at {LastStockCheck}!", MessageBoxButton.OK, MessageBoxImage.Exclamation,
 					MessageBoxResult.OK, MessageBoxOptions.ServiceNotification);
+				if(_pushbulletToken != null) {
+					await SendPush(message);
+				}
+			}
+		}
+
+		async Task SendPush(string message) {
+			try {
+				byte[] webContent = Encoding.ASCII.GetBytes($"{{ \"type\": \"note\", \"title\": \"stockcheck\", \"body\": \"{message}\" }}");
+
+				HttpWebRequest webRequest = (HttpWebRequest)WebRequest.Create("https://api.pushbullet.com/v2/pushes");
+				webRequest.Method = "POST";
+				webRequest.ContentType = "application/json";
+				webRequest.Credentials = new NetworkCredential(_pushbulletToken, "");
+				webRequest.ContentLength = webContent.Length;
+				using(Stream requestStream = webRequest.GetRequestStream()) {
+					await requestStream.WriteAsync(webContent, 0, webContent.Length);
+					requestStream.Close();
+				}
+
+				using(HttpWebResponse response = webRequest.GetResponse() as HttpWebResponse) {
+					using(StreamReader reader = new System.IO.StreamReader(response.GetResponseStream())) {
+						string responseContent = reader.ReadToEnd();
+					}
+				}
+			}
+			catch {
+				// don't crash
 			}
 		}
 	}
