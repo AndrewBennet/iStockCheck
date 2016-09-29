@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace stockcheck {
+namespace com.andrewbennet.istockcheck {
     public class IphoneModel {
 
         public IphoneModel(PhoneSize iPhoneSize, StorageSize size, Colour colour) {

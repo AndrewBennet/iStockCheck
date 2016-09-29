@@ -7,9 +7,8 @@ using System.Net.Http;
 using System.Threading.Tasks;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
-using System.Text;
 
-namespace stockcheck {
+namespace com.andrewbennet.istockcheck {
 
 	public class StockChecker {
 		public List<IphoneModel> Models { get; }
@@ -24,7 +23,6 @@ namespace stockcheck {
 			List<StorageSize> storageSizes = ConfigTools.IntsFromStringList(ConfigurationManager.AppSettings["storage-size"]).Select(IphoneModel.StorageSizeFromInt).ToList();
 			PostCode = ConfigurationManager.AppSettings["post-code"];
 			
-
 			Models = IphoneModel.GetModels(iphoneSizes, storageSizes, colours).ToList();
 		}
 

@@ -1,4 +1,4 @@
-# stockcheck
+# iStockcheck
 ## Get realtime alerts when an iPhone 7 is in stock nearby.
 ![iPhone screenshot](https://github.com/AndrewBennet/stockcheck/raw/master/media/iphone_lockscreen.PNG)
 

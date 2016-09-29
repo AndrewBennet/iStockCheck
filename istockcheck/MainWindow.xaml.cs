@@ -1,18 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Configuration;
-using System.IO;
 using System.Linq;
-using System.Net;
 using System.Net.Http;
-using System.Net.Http.Headers;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Threading;
 using Newtonsoft.Json.Linq;
 
-namespace stockcheck {
+namespace com.andrewbennet.istockcheck {
 	/// <summary>
 	/// Interaction logic for MainWindow.xaml
 	/// </summary>
