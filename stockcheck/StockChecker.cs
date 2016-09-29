@@ -46,7 +46,7 @@ namespace stockcheck {
                     if(stores != null) {
                         foreach(var store in stores) {
                             string pickupQuote = store["partsAvailability"][iphoneModel.ToIdentifier()]["storePickupQuote"].Value<string>();
-                            if(pickupQuote != "Currently unavailable") {
+                            if(!pickupQuote.ToLower().Contains("unavailable")) {
                                 message.AppendLine($"{iphoneModel.ToDisplayName()} available at {store["storeName"].Value<string>()}!");
                             }
                         }
