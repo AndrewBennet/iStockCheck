@@ -5,13 +5,13 @@ using System.Text;
 namespace stockcheck {
     public class IphoneModel {
 
-        public IphoneModel(IphoneSize iPhoneSize, StorageSize size, Colour colour) {
-            IphoneSize = iPhoneSize;
+        public IphoneModel(PhoneSize iPhoneSize, StorageSize size, Colour colour) {
+            PhoneSize = iPhoneSize;
             StorageSize = size;
             Colour = colour;
         }
 
-        public IphoneSize IphoneSize { get; }
+        public PhoneSize PhoneSize { get; }
 
         public StorageSize StorageSize { get; }
 
@@ -22,32 +22,29 @@ namespace stockcheck {
 		    //32  128  256
 
 		    // == iPhone 7 ==
-		    "?", "96", "9C", // jet black
+		    null, "96", "9C", // jet black
 		    "8X", "92", "97", // black
 		    "8Y", "93", "98", // silver
 		    "90", "94", "99", // gold
 		    "91", "95", "9A", // rose gold
 
 		    // == iPhone 7 Plus ==
-		    "?", "4V", "51", // jet black
+		    null, "4V", "51", // jet black
 		    "QM", "4M", "4W", // black
 		    "QN", "4P", "4X", // silver
 		    "QP", "4Q", "4Y", // gold
 		    "QQ", "4U", "50" // rose gold
 	    };
 
-        public string ToIdentifier() {
-	        int modelIndex = (int)IphoneSize + (int)Colour + (int)StorageSize;
-            return $"MN{ModelIdentifiers[modelIndex]}2B/A";
-        }
+	    public string ToIdentifier() => $"MN{ModelIdentifiers[(int)PhoneSize + (int)Colour + (int)StorageSize]}2B/A";
 
         public string ToDisplayName() {
             StringBuilder displayName = new StringBuilder();
-            switch(IphoneSize) {
-                case IphoneSize.iPhone7:
+            switch(PhoneSize) {
+                case PhoneSize.iPhone7:
                     displayName.Append("iPhone 7 ");
                     break;
-                case IphoneSize.iPhone7Plus:
+                case PhoneSize.iPhone7Plus:
                     displayName.Append("iPhone 7 Plus ");
                     break;
             }
@@ -69,24 +66,24 @@ namespace stockcheck {
                     break;
             }
             switch(StorageSize) {
-                case StorageSize.Gb32:
+                case StorageSize.Small:
                     displayName.Append("32GB");
                     break;
-                case StorageSize.Gb128:
+                case StorageSize.Medium:
                     displayName.Append("128GB");
                     break;
-                case StorageSize.Gb256:
+                case StorageSize.Large:
                     displayName.Append("256GB");
                     break;
             }
             return displayName.ToString();
         }
 
-        public static IEnumerable<IphoneModel> GetModels(IEnumerable<IphoneSize> iphoneSizes, IEnumerable<StorageSize> sizes, IEnumerable<Colour> colours) {
+        public static IEnumerable<IphoneModel> GetModels(IEnumerable<PhoneSize> iphoneSizes, IEnumerable<StorageSize> sizes, IEnumerable<Colour> colours) {
             foreach(var iphoneSize in iphoneSizes) {
                 foreach(var size in sizes) {
                     foreach(var colour in colours) {
-                        if(colour != Colour.JetBlack || size != StorageSize.Gb32) {
+                        if(colour != Colour.JetBlack || size != StorageSize.Small) {
                             yield return new IphoneModel(iphoneSize, size, colour);
                         }
                     }
@@ -96,19 +93,19 @@ namespace stockcheck {
 
 	    public static StorageSize StorageSizeFromInt(int size) {
 		    if(size == 32) {
-			    return StorageSize.Gb32;
+			    return StorageSize.Small;
 		    }
 		    if(size == 128) {
-			    return StorageSize.Gb128;
+			    return StorageSize.Medium;
 		    }
 		    if(size == 256) {
-			    return StorageSize.Gb256;
+			    return StorageSize.Large;
 		    }
 			throw new InvalidOperationException($"Size {size} is not a valid storage size.");
 	    }
     }
 
-    public enum IphoneSize {
+    public enum PhoneSize {
 	    // ReSharper disable InconsistentNaming
         iPhone7 = 0,
 		iPhone7Plus = 15
@@ -124,8 +121,8 @@ namespace stockcheck {
     }
 
     public enum StorageSize {
-        Gb32 = 0,
-        Gb128 = 1,
-        Gb256 = 2
+        Small = 0,
+        Medium = 1,
+        Large = 2
     }
 }

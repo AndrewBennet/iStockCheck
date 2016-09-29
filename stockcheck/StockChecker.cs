@@ -19,7 +19,7 @@ namespace stockcheck {
 		public const string BaseUrl = "http://www.apple.com/uk/shop/retail/pickup-message";
 
 		public StockChecker() {
-			List<IphoneSize> iphoneSizes = ConfigTools.EnumsFromListString<IphoneSize>(ConfigurationManager.AppSettings["iphone-size"]);
+			List<PhoneSize> iphoneSizes = ConfigTools.EnumsFromListString<PhoneSize>(ConfigurationManager.AppSettings["iphone-size"]);
 			List<Colour> colours = ConfigTools.EnumsFromListString<Colour>(ConfigurationManager.AppSettings["colour"]);
 			List<StorageSize> storageSizes = ConfigTools.IntsFromStringList(ConfigurationManager.AppSettings["storage-size"]).Select(IphoneModel.StorageSizeFromInt).ToList();
 			PostCode = ConfigurationManager.AppSettings["post-code"];
@@ -28,7 +28,7 @@ namespace stockcheck {
 			Models = IphoneModel.GetModels(iphoneSizes, storageSizes, colours).ToList();
 		}
 
-		public async Task<string> CheckForStockAsync() {
+		public async Task<Dictionary<IphoneModel, List<string>>> CheckForStockAsync() {
 			Dictionary<IphoneModel, List<string>> storesByIphone = new Dictionary<IphoneModel, List<string>>();
 
 			foreach(List<IphoneModel> modelBatch in Models.Batch(10)) {
@@ -76,14 +76,7 @@ namespace stockcheck {
 				}
 			}
 
-			if(storesByIphone.Any()) {
-				StringBuilder messageBuilder = new StringBuilder();
-				foreach(IphoneModel model in storesByIphone.Keys) {
-					messageBuilder.AppendLine($"{model.ToDisplayName()} available at {string.Join(", ", storesByIphone[model])}.");
-				}
-				return messageBuilder.ToString();
-			}
-			return null;
+			return storesByIphone;
 		}
 	}
 

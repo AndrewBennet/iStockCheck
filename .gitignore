@@ -1,6 +1,4 @@
-*.sln.DotSettings.user
+stockcheck.sln.DotSettings.user
 obj/
-[Bb]in
-*.suo
-*.user
+bin/
 .vs
