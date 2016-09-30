@@ -4,7 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         mc:Ignorable="d"
-        Title="stockcheck" Height="70" Width="300" MaxHeight="70" MaxWidth="300" MinHeight="70" MinWidth="300"
+        Title="iStockcheck" Height="70" Width="300" MaxHeight="70" MaxWidth="300" MinHeight="70" MinWidth="300"
         Loaded="MainWindow_OnLoaded">
     <Grid>
         <Label Name="WindowMessageLabel"/>

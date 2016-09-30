@@ -18,12 +18,17 @@ namespace com.andrewbennet.istockcheck {
 		public const string BaseUrl = "http://www.apple.com/uk/shop/retail/pickup-message";
 
 		public StockChecker() {
-			List<PhoneSize> iphoneSizes = ConfigTools.EnumsFromListString<PhoneSize>(ConfigurationManager.AppSettings["iphone-size"]);
-			List<Colour> colours = ConfigTools.EnumsFromListString<Colour>(ConfigurationManager.AppSettings["colour"]);
-			List<StorageSize> storageSizes = ConfigTools.IntsFromStringList(ConfigurationManager.AppSettings["storage-size"]).Select(IphoneModel.StorageSizeFromInt).ToList();
-			PostCode = ConfigurationManager.AppSettings["post-code"];
-			
-			Models = IphoneModel.GetModels(iphoneSizes, storageSizes, colours).ToList();
+			try {
+				List<PhoneSize> iphoneSizes = ConfigTools.EnumsFromListString<PhoneSize>(ConfigurationManager.AppSettings["iphone-size"]);
+				List<Colour> colours = ConfigTools.EnumsFromListString<Colour>(ConfigurationManager.AppSettings["colour"]);
+				List<StorageSize> storageSizes = ConfigTools.IntsFromStringList(ConfigurationManager.AppSettings["storage-size"]).Select(IphoneModel.StorageSizeFromInt).ToList();
+				PostCode = ConfigurationManager.AppSettings["post-code"];
+
+				Models = IphoneModel.GetModels(iphoneSizes, storageSizes, colours).ToList();
+			}
+			catch {
+				throw new AppConfigFormatException();
+			}
 		}
 
 		public async Task<Dictionary<IphoneModel, List<string>>> CheckForStockAsync() {
@@ -43,8 +48,8 @@ namespace com.andrewbennet.istockcheck {
 					// Load the response
 					webContent = await result.Content.ReadAsStringAsync();
 				}
-				catch {
-					// don't crash if there's no internet
+				catch(Exception e) {
+					throw new AppleConnectivityException(e);
 				}
 
 				try {
@@ -69,13 +74,23 @@ namespace com.andrewbennet.istockcheck {
 						}
 					}
 				}
-				catch {
-					// don't crash if the JSON isn't what we expect
+				catch(Exception e) {
+					throw new AppleFormatException(e);
 				}
 			}
 
 			return storesByIphone;
 		}
+	}
+
+	public class AppConfigFormatException : Exception { }
+
+	public class AppleConnectivityException : Exception {
+		public AppleConnectivityException(Exception innerException) : base(innerException.Message, innerException) {}
+	}
+
+	public class AppleFormatException : Exception {
+		public AppleFormatException(Exception innerException) : base(innerException.Message, innerException) {}
 	}
 
 	static class ConfigTools {
@@ -112,10 +127,6 @@ namespace com.andrewbennet.istockcheck {
 
 	static class EnumTools {
 		public static TEnum EnumFromString<TEnum>(string input) => (TEnum)Enum.Parse(typeof(TEnum), input);
-	}
-
-	static class UnixTimestamp {
-		public static long Now => (int)(DateTime.UtcNow.Subtract(new DateTime(1970, 1, 1))).TotalSeconds;
 	}
 
 	static class JsonTools {
