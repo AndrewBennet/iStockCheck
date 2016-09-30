@@ -1,13 +1,17 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Configuration;
+using System.Drawing;
 using System.Linq;
 using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
+using System.Windows.Forms;
 using System.Windows.Threading;
 using Newtonsoft.Json.Linq;
+using MessageBox = System.Windows.MessageBox;
+using MessageBoxOptions = System.Windows.MessageBoxOptions;
 
 namespace com.andrewbennet.istockcheck {
 	/// <summary>
@@ -17,6 +21,25 @@ namespace com.andrewbennet.istockcheck {
 		public MainWindow() {
 			InitializeComponent();
 			WindowMessageLabel.Content = "Checking iPhone stock";
+
+			// Restoration from minimisation
+			NotifyIcon ni = new NotifyIcon {
+				Icon = new Icon("Resources/Phone-64.ico"),
+				Visible = true
+			};
+			ni.DoubleClick += delegate {
+				Show();
+				WindowState = WindowState.Normal;
+			};
+		}
+
+		protected override void OnStateChanged(EventArgs e) {
+			// Hide when minimised
+			if(WindowState == WindowState.Minimized) {
+				Hide();
+			}
+
+			base.OnStateChanged(e);
 		}
 
 		public DateTime LastStockCheck { get; private set; }
@@ -61,9 +84,9 @@ namespace com.andrewbennet.istockcheck {
 			try {
 				JObject con = new JObject(new JProperty("body", ""), new JProperty("title", message), new JProperty("type", "note"));
 				HttpContent content = new StringContent(con.ToString(), Encoding.UTF8, "application/json");
-				HttpResponseMessage response = await _pushBulletClient.PostAsync("https://api.pushbullet.com/v2/pushes", content);
+				await _pushBulletClient.PostAsync("https://api.pushbullet.com/v2/pushes", content);
 			}
-			catch(Exception e) {
+			catch(Exception) {
 				// don't crash
 			}
 		}
