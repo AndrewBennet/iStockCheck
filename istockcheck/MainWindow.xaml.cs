@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Configuration;
 using System.Drawing;
 using System.Windows;
@@ -33,12 +34,14 @@ namespace com.andrewbennet.istockcheck {
 			base.OnStateChanged(e);
 		}
 
-		private StockRelayer _stockRelayer;
+		private Notifier _notifier;
+		private StockChecker _stockChecker;
 		private int _sleepTime;
 
 		private void MainWindow_OnLoaded(object sender, RoutedEventArgs e) {
 			try {
-				_stockRelayer = new StockRelayer();
+				_stockChecker = new StockChecker();
+				_notifier = new Notifier();
 				_sleepTime = int.Parse(ConfigurationManager.AppSettings["sleeptime"]);
 			}
 			catch(Exception) {
@@ -47,11 +50,33 @@ namespace com.andrewbennet.istockcheck {
 			}
 
 			DispatcherTimer timer = new DispatcherTimer { Interval = TimeSpan.FromMilliseconds(_sleepTime) };
-			timer.Tick += (dispatchSender, args) => {
-				_stockRelayer.RelayStock();
-				WindowMessageLabel.Content = _stockRelayer.DisplayMessage;
-			};
+			timer.Tick += (dispatchSender, args) => RelayStock();
 			timer.Start();
+		}
+
+		async void RelayStock() {
+			Dictionary<IphoneModel, List<string>> stock;
+			DateTime now = DateTime.Now;
+			try {
+				 stock = await _stockChecker.CheckForStockAsync();
+			}
+			catch(AppleConnectivityException) {
+				WindowMessageLabel.Content = $"Apple connectivity issue at {now.ToLongTimeString()}";
+				return;
+			}
+			catch(AppleFormatException) {
+				WindowMessageLabel.Content = $"Unexpected Apple response issue at {now.ToLongTimeString()}";
+				return;
+			}
+
+			try {
+				_notifier.Notify(now, stock);
+				WindowMessageLabel.Content = $"Last stock check at {now.ToLongTimeString()}";
+			}
+			catch {
+				WindowMessageLabel.Content = $"Error sending notification at {now.ToLongTimeString()}";
+			}
+			
 		}
 	}
 }

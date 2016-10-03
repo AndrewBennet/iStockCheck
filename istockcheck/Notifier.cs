@@ -9,15 +9,13 @@ using System.Windows;
 using Newtonsoft.Json.Linq;
 
 namespace com.andrewbennet.istockcheck {
-	class StockRelayer {
-		public DateTime LastStockCheck { get; private set; }
-		public string DisplayMessage { get; private set; }
+	class Notifier {
 		private readonly string _pushbulletToken;
 		private readonly bool _enableWindowsAlerts;
-		readonly StockChecker _stockChecker = new StockChecker();
+		
 		private readonly HttpClient _pushBulletClient = new HttpClient();
 
-		public StockRelayer() {
+		public Notifier() {
 			_enableWindowsAlerts = bool.Parse(ConfigurationManager.AppSettings["windows-alerts"]);
 			_pushbulletToken = string.IsNullOrWhiteSpace(ConfigurationManager.AppSettings["pushbullet-token"]) ? null : ConfigurationManager.AppSettings["pushbullet-token"];
 			if(_pushbulletToken != null) {
@@ -25,23 +23,7 @@ namespace com.andrewbennet.istockcheck {
 			}
 		}
 
-		public async void RelayStock() {
-			Dictionary<IphoneModel, List<string>> stock;
-			try {
-				stock = await _stockChecker.CheckForStockAsync();
-			}
-			catch(AppleConnectivityException) {
-				DisplayMessage = $"Apple connectivity issue at {DateTime.Now.ToLongTimeString()}";
-				return;
-			}
-			catch(AppleFormatException) {
-				DisplayMessage = $"Unexpected Apple response issue at {DateTime.Now.ToLongTimeString()}";
-				return;
-			}
-
-			LastStockCheck = DateTime.Now;
-			DisplayMessage = $"Last stock check at {DateTime.Now.ToLongTimeString()}";
-
+		public async void Notify(DateTime timeOfCheck, Dictionary<IphoneModel, List<string>> stock) {
 			if(stock.Any()) {
 				if(_enableWindowsAlerts) {
 					StringBuilder messageBuilder = new StringBuilder();
@@ -49,7 +31,7 @@ namespace com.andrewbennet.istockcheck {
 						messageBuilder.AppendLine($"{model.ToDisplayName()} available at {string.Join(", ", stock[model])}.");
 					}
 					string message = messageBuilder.ToString();
-					MessageBox.Show(message, $"Stock found at {LastStockCheck}!", MessageBoxButton.OK, MessageBoxImage.Exclamation,
+					MessageBox.Show(message, $"Stock found at {timeOfCheck}!", MessageBoxButton.OK, MessageBoxImage.Exclamation,
 						MessageBoxResult.OK, MessageBoxOptions.ServiceNotification);
 				}
 				if(_pushbulletToken != null) {
@@ -67,7 +49,7 @@ namespace com.andrewbennet.istockcheck {
 				await _pushBulletClient.PostAsync("https://api.pushbullet.com/v2/pushes", content);
 			}
 			catch(Exception) {
-				DisplayMessage = $"Error sending PushBullet notification at {DateTime.Now.ToLongTimeString()}";
+				
 			}
 		}
 	}
