@@ -1,0 +1,391 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		49299A1B1DA0F306004858AD /* AppleStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49299A1A1DA0F306004858AD /* AppleStore.swift */; };
+		49299A211DA1531E004858AD /* Notifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49299A201DA1531E004858AD /* Notifier.swift */; };
+		49FC8DF81DA05CF6002D1D3E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49FC8DF71DA05CF6002D1D3E /* AppDelegate.swift */; };
+		49FC8DFA1DA05CF6002D1D3E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 49FC8DF91DA05CF6002D1D3E /* Assets.xcassets */; };
+		49FC8DFD1DA05CF6002D1D3E /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 49FC8DFB1DA05CF6002D1D3E /* MainMenu.xib */; };
+		49FC8E051DA060B0002D1D3E /* iPhoneModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49FC8E041DA060B0002D1D3E /* iPhoneModel.swift */; };
+		49FC8E071DA06C6E002D1D3E /* StockChecker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49FC8E061DA06C6E002D1D3E /* StockChecker.swift */; };
+		95CF73133828B4C86C1B1DFE /* Pods_iStockcheck.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3B2419BE54D5452DF2E7C2B /* Pods_iStockcheck.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		49299A1A1DA0F306004858AD /* AppleStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppleStore.swift; sourceTree = "<group>"; };
+		49299A201DA1531E004858AD /* Notifier.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Notifier.swift; sourceTree = "<group>"; };
+		49FC8DF41DA05CF6002D1D3E /* iStockcheck.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iStockcheck.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		49FC8DF71DA05CF6002D1D3E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		49FC8DF91DA05CF6002D1D3E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		49FC8DFC1DA05CF6002D1D3E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		49FC8DFE1DA05CF6002D1D3E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		49FC8E041DA060B0002D1D3E /* iPhoneModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = iPhoneModel.swift; sourceTree = "<group>"; };
+		49FC8E061DA06C6E002D1D3E /* StockChecker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StockChecker.swift; sourceTree = "<group>"; };
+		674848AAE9AEC3FBF6A0B236 /* Pods-iStockcheck.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iStockcheck.debug.xcconfig"; path = "Pods/Target Support Files/Pods-iStockcheck/Pods-iStockcheck.debug.xcconfig"; sourceTree = "<group>"; };
+		8D07316D9237F4BC5E83EA63 /* Pods-iStockcheck.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iStockcheck.release.xcconfig"; path = "Pods/Target Support Files/Pods-iStockcheck/Pods-iStockcheck.release.xcconfig"; sourceTree = "<group>"; };
+		B3B2419BE54D5452DF2E7C2B /* Pods_iStockcheck.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iStockcheck.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		49FC8DF11DA05CF6002D1D3E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				95CF73133828B4C86C1B1DFE /* Pods_iStockcheck.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		49FC8DEB1DA05CF6002D1D3E = {
+			isa = PBXGroup;
+			children = (
+				49FC8DF61DA05CF6002D1D3E /* iStockcheck */,
+				49FC8DF51DA05CF6002D1D3E /* Products */,
+				954378B5AFC5EFDE9BE1A403 /* Pods */,
+				AA7D9D3E5A5C822EA7596260 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		49FC8DF51DA05CF6002D1D3E /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				49FC8DF41DA05CF6002D1D3E /* iStockcheck.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		49FC8DF61DA05CF6002D1D3E /* iStockcheck */ = {
+			isa = PBXGroup;
+			children = (
+				49FC8DF71DA05CF6002D1D3E /* AppDelegate.swift */,
+				49FC8DF91DA05CF6002D1D3E /* Assets.xcassets */,
+				49FC8DFB1DA05CF6002D1D3E /* MainMenu.xib */,
+				49FC8DFE1DA05CF6002D1D3E /* Info.plist */,
+				49FC8E041DA060B0002D1D3E /* iPhoneModel.swift */,
+				49FC8E061DA06C6E002D1D3E /* StockChecker.swift */,
+				49299A1A1DA0F306004858AD /* AppleStore.swift */,
+				49299A201DA1531E004858AD /* Notifier.swift */,
+			);
+			path = iStockcheck;
+			sourceTree = "<group>";
+		};
+		954378B5AFC5EFDE9BE1A403 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				674848AAE9AEC3FBF6A0B236 /* Pods-iStockcheck.debug.xcconfig */,
+				8D07316D9237F4BC5E83EA63 /* Pods-iStockcheck.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		AA7D9D3E5A5C822EA7596260 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B3B2419BE54D5452DF2E7C2B /* Pods_iStockcheck.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		49FC8DF31DA05CF6002D1D3E /* iStockcheck */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 49FC8E011DA05CF6002D1D3E /* Build configuration list for PBXNativeTarget "iStockcheck" */;
+			buildPhases = (
+				2E17D217802CF5C522510D7D /* Check Pods Manifest.lock */,
+				49FC8DF01DA05CF6002D1D3E /* Sources */,
+				49FC8DF11DA05CF6002D1D3E /* Frameworks */,
+				49FC8DF21DA05CF6002D1D3E /* Resources */,
+				CFDCCD98BBF5CA01916D2E55 /* Embed Pods Frameworks */,
+				70E1B016486ABD0C284DBF70 /* Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = iStockcheck;
+			productName = iStockcheck;
+			productReference = 49FC8DF41DA05CF6002D1D3E /* iStockcheck.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		49FC8DEC1DA05CF6002D1D3E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0800;
+				LastUpgradeCheck = 0800;
+				ORGANIZATIONNAME = "Andrew Bennet";
+				TargetAttributes = {
+					49FC8DF31DA05CF6002D1D3E = {
+						CreatedOnToolsVersion = 8.0;
+						DevelopmentTeam = YPDEV2E775;
+						LastSwiftMigration = 0800;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = 49FC8DEF1DA05CF6002D1D3E /* Build configuration list for PBXProject "iStockcheck" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 49FC8DEB1DA05CF6002D1D3E;
+			productRefGroup = 49FC8DF51DA05CF6002D1D3E /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				49FC8DF31DA05CF6002D1D3E /* iStockcheck */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		49FC8DF21DA05CF6002D1D3E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				49FC8DFA1DA05CF6002D1D3E /* Assets.xcassets in Resources */,
+				49FC8DFD1DA05CF6002D1D3E /* MainMenu.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		2E17D217802CF5C522510D7D /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		70E1B016486ABD0C284DBF70 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-iStockcheck/Pods-iStockcheck-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		CFDCCD98BBF5CA01916D2E55 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-iStockcheck/Pods-iStockcheck-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		49FC8DF01DA05CF6002D1D3E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				49299A211DA1531E004858AD /* Notifier.swift in Sources */,
+				49FC8E051DA060B0002D1D3E /* iPhoneModel.swift in Sources */,
+				49FC8DF81DA05CF6002D1D3E /* AppDelegate.swift in Sources */,
+				49299A1B1DA0F306004858AD /* AppleStore.swift in Sources */,
+				49FC8E071DA06C6E002D1D3E /* StockChecker.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		49FC8DFB1DA05CF6002D1D3E /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				49FC8DFC1DA05CF6002D1D3E /* Base */,
+			);
+			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		49FC8DFF1DA05CF6002D1D3E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		49FC8E001DA05CF6002D1D3E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = macosx;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+			};
+			name = Release;
+		};
+		49FC8E021DA05CF6002D1D3E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 674848AAE9AEC3FBF6A0B236 /* Pods-iStockcheck.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = YPDEV2E775;
+				INFOPLIST_FILE = iStockcheck/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.andrewbennet.iStockcheck;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		49FC8E031DA05CF6002D1D3E /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8D07316D9237F4BC5E83EA63 /* Pods-iStockcheck.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = YPDEV2E775;
+				INFOPLIST_FILE = iStockcheck/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.andrewbennet.iStockcheck;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		49FC8DEF1DA05CF6002D1D3E /* Build configuration list for PBXProject "iStockcheck" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				49FC8DFF1DA05CF6002D1D3E /* Debug */,
+				49FC8E001DA05CF6002D1D3E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		49FC8E011DA05CF6002D1D3E /* Build configuration list for PBXNativeTarget "iStockcheck" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				49FC8E021DA05CF6002D1D3E /* Debug */,
+				49FC8E031DA05CF6002D1D3E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 49FC8DEC1DA05CF6002D1D3E /* Project object */;
+}
