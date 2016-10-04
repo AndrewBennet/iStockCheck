@@ -1,4 +1,5 @@
-stockcheck.sln.DotSettings.user
+*.sln.DotSettings.user
 obj/
 bin/
 .vs
+xcuserdata/
