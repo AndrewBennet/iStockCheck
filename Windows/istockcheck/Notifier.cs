@@ -11,16 +11,26 @@ using Newtonsoft.Json.Linq;
 namespace com.andrewbennet.istockcheck {
 	class Notifier {
 		private readonly string _pushbulletToken;
+		private readonly string _telegramBotId;
+		private readonly string _telegramChatId;
 		private readonly bool _enableWindowsAlerts;
 		
 		private readonly HttpClient _pushBulletClient = new HttpClient();
+		private readonly HttpClient _telegramClient = new HttpClient();
 
 		public Notifier() {
 			_enableWindowsAlerts = bool.Parse(ConfigurationManager.AppSettings["windows-alerts"]);
-			_pushbulletToken = string.IsNullOrWhiteSpace(ConfigurationManager.AppSettings["pushbullet-token"]) ? null : ConfigurationManager.AppSettings["pushbullet-token"];
+
+			string pushBulletToken = ConfigurationManager.AppSettings["pushbullet-token"]?.Trim();
+			_pushbulletToken = string.IsNullOrWhiteSpace(pushBulletToken) ? null : pushBulletToken;
 			if(_pushbulletToken != null) {
 				_pushBulletClient.DefaultRequestHeaders.Add("Access-Token", _pushbulletToken);
 			}
+
+			string telegramBotId = ConfigurationManager.AppSettings["telegram-bot-id"]?.Trim();
+			string telegramChatId = ConfigurationManager.AppSettings["telegram-chat-id"]?.Trim();
+			_telegramBotId = string.IsNullOrWhiteSpace(telegramBotId) ? null : telegramBotId;
+			_telegramChatId = string.IsNullOrWhiteSpace(telegramChatId) ? null : telegramChatId;
 		}
 
 		public async void Notify(DateTime timeOfCheck, Dictionary<IphoneModel, List<string>> stock) {
@@ -39,6 +49,11 @@ namespace com.andrewbennet.istockcheck {
 						await SendPushbullet($"{model.ToDisplayName()} available at {string.Join(", ", stock[model])}.", "");
 					}
 				}
+				if(_telegramBotId != null && _telegramChatId != null) {
+					foreach(IphoneModel model in stock.Keys) {
+						await SendTelegram($"{model.ToDisplayName()} available at {string.Join(", ", stock[model])}.");
+					}
+				}
 			}
 		}
 
@@ -50,6 +65,15 @@ namespace com.andrewbennet.istockcheck {
 			}
 			catch(Exception) {
 				
+			}
+		}
+
+		async Task SendTelegram(string message) {
+			try {
+				await _telegramClient.GetAsync($"https://api.telegram.org/bot{_telegramBotId}/sendMessage?chat_id={_telegramChatId}&text={message}");
+			}
+			catch (Exception) {
+
 			}
 		}
 	}
