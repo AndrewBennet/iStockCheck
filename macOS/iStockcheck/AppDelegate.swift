@@ -44,8 +44,7 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSUserNotificationCenterDele
         stockChecker.setSearchTerms(models: selectedModels)
         stockChecker.setSearchTerms(stores: selectedStores)
         
-        let timer = Timer(timeInterval: stockCheckFrequencySeconds, target: self, selector: #selector(checkForStockAndNotify), userInfo: nil, repeats: true)
-        timer.fire()
+        Timer.scheduledTimer(timeInterval: stockCheckFrequencySeconds, target: self, selector: #selector(checkForStockAndNotify), userInfo: nil, repeats: true)
     }
     
     func checkForStockAndNotify() {
