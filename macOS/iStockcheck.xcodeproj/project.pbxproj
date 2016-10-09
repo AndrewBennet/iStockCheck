@@ -28,6 +28,7 @@
 		38AF377025446D475EE5ECD9 /* Pods-iStockcheck.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iStockcheck.debug.xcconfig"; path = "Pods/Target Support Files/Pods-iStockcheck/Pods-iStockcheck.debug.xcconfig"; sourceTree = "<group>"; };
 		49154A201DA67A8A00C2048B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		492170CD1DAA4C2E00F7691C /* iS_icon.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = iS_icon.icns; sourceTree = "<group>"; };
+		492170ED1DAADE9300F7691C /* iStockcheck.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = iStockcheck.entitlements; sourceTree = "<group>"; };
 		49299A1A1DA0F306004858AD /* AppleStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppleStore.swift; sourceTree = "<group>"; };
 		49299A201DA1531E004858AD /* Notifier.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Notifier.swift; sourceTree = "<group>"; };
 		493892FB1DA4518E00F7241A /* iPhoneModelsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = iPhoneModelsViewController.swift; sourceTree = "<group>"; };
@@ -112,6 +113,7 @@
 		49FC8DF61DA05CF6002D1D3E /* iStockcheck */ = {
 			isa = PBXGroup;
 			children = (
+				492170ED1DAADE9300F7691C /* iStockcheck.entitlements */,
 				492170CF1DAA4E1F00F7691C /* Models */,
 				49E16FB71DA3DC02001584D0 /* ViewControllers */,
 				49AC9B3C1DA3DAAE0011A550 /* AppDelegate.swift */,
@@ -163,6 +165,11 @@
 						DevelopmentTeam = YPDEV2E775;
 						LastSwiftMigration = 0800;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Sandbox = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -373,6 +380,7 @@
 			baseConfigurationReference = 38AF377025446D475EE5ECD9 /* Pods-iStockcheck.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_ENTITLEMENTS = iStockcheck/iStockcheck.entitlements;
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = YPDEV2E775;
@@ -390,6 +398,7 @@
 			baseConfigurationReference = 1A764A28A5E23EC3FA25F8C9 /* Pods-iStockcheck.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_ENTITLEMENTS = iStockcheck/iStockcheck.entitlements;
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = YPDEV2E775;
