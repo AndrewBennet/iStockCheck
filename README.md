@@ -1,9 +1,13 @@
 # iStockcheck
-## Get realtime alerts when an iPhone 7 is in stock nearby.
+Get notifications as soon as an iPhone 7 becomes available to reserve at Apple Stores in the UK.
+
+iStockcheck runs in the background and checks iPhone 7 reservation availability every minute. If any new availability is found matching your settings, iStockcheck can send notifications via:
+
+- macOS Notification Center
+- Windows alert
+- [Pushbullet](http://www.pushbullet.com)
+- [Telegram](http://www.telegram.org)
+
 ![iPhone screenshot](https://github.com/AndrewBennet/stockcheck/raw/master/media/iphone_lockscreen.PNG)
 
-A Windows app to provide alerts when a desired iPhone 7 model is available in a local Apple store.
-
-Written in C#, builds in Visual Studio 2015. Edit the app.config (or stockcheck.exe.config in the output directory) to set the desired iPhone model types, and the UK postcode to search around.
-
-Optionally, provide a [Pushbullet](http://www.pushbullet.com) authentication token to have the alerts sent to Pushbullet, instead of a Windows popup dialog.
+Builds in Xcode 8 (macOS) and Visual Studio 2015 (Windows).
