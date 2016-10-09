@@ -11,8 +11,8 @@ import Cocoa
 class NotificationsViewController: NSViewController {
     
     @IBOutlet weak var pushbulletApiKey: NSTextField!
-    @IBOutlet weak var telegramBotId: NSSecureTextField!
-    @IBOutlet weak var telegramChatId: NSSecureTextField!
+    @IBOutlet weak var telegramBotId: NSTextField!
+    @IBOutlet weak var telegramChatId: NSTextField!
     
     let pushbulletApiKeyKey = "pushbulleyApiKey"
     let telegramBotIdKey = "telegramBotId"

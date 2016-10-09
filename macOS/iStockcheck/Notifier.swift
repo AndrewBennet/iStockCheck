@@ -54,6 +54,7 @@ class Notifier {
     }
     
     private func sendTelegramNotification(text: String) {
-        let _ = Alamofire.request("https://api.telegram.org/bot\(telegramBotId)/sendMessage?chat_id=\(telegramChatId)&text=\(text)")
+        let telegramMessageUrl = "https://api.telegram.org/bot\(telegramBotId!)/sendMessage?chat_id=\(telegramChatId!)&text=\(text.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed)!)"
+        let _ = Alamofire.request(telegramMessageUrl)
     }
 }

@@ -84,16 +84,11 @@ class StockChecker {
                     
                     if stockAvailable {
                         if !self.existingStock.contains(thisStock) {
-                            print("Stock inserted: \(thisStock.model.ToDisplayName()), \(thisStock.storeIdentifier)")
                             self.existingStock.insert(thisStock)
                             respond(thisStock)
                         }
-                        else {
-                            print("Stock still available.")
-                        }
                     }
                     else {
-                        print("Stock removed: \(thisStock.model.ToDisplayName()), \(thisStock.storeIdentifier)")
                         self.existingStock.remove(thisStock)
                     }
                 }

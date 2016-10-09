@@ -78,7 +78,7 @@
                 <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModule="iStockcheck" customModuleProvider="target"/>
                 <customObject id="Ady-hI-5gd" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="75" y="0.0"/>
+            <point key="canvasLocation" x="19" y="-117"/>
         </scene>
         <!--Window Controller-->
         <scene sceneID="R2V-B0-nI4">
@@ -135,10 +135,10 @@
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <stackView distribution="equalSpacing" orientation="vertical" alignment="leading" spacing="5" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Zhv-Q6-vn5">
-                                <rect key="frame" x="20" y="5" width="197.5" height="390"/>
+                                <rect key="frame" x="20" y="5" width="198" height="390"/>
                             </stackView>
                             <stackView distribution="equalSpacing" orientation="vertical" alignment="leading" spacing="5" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="X7b-yT-noB">
-                                <rect key="frame" x="232.5" y="5" width="197" height="390"/>
+                                <rect key="frame" x="232.5" y="5" width="197.5" height="390"/>
                             </stackView>
                         </subviews>
                         <constraints>
@@ -226,111 +226,102 @@
             <objects>
                 <viewController title="Notifications" id="aev-2g-HgG" customClass="NotificationsViewController" customModule="iStockcheck" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="byx-fb-Xit">
-                        <rect key="frame" x="0.0" y="0.0" width="493" height="366"/>
+                        <rect key="frame" x="0.0" y="0.0" width="493" height="375"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <box title="Pushbullet" translatesAutoresizingMaskIntoConstraints="NO" id="VqK-XO-9Wl">
-                                <rect key="frame" x="17" y="194" width="459" height="79"/>
+                                <rect key="frame" x="17" y="200" width="459" height="82"/>
                                 <view key="contentView" id="kaP-My-uwW">
-                                    <rect key="frame" x="2" y="2" width="455" height="62"/>
+                                    <rect key="frame" x="2" y="2" width="455" height="65"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
                                         <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Zrb-Cd-7tK">
-                                            <rect key="frame" x="18" y="23" width="118" height="17"/>
+                                            <rect key="frame" x="18" y="24" width="118" height="17"/>
                                             <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Pushbullet API Key" id="b5f-gI-9I8">
                                                 <font key="font" metaFont="system"/>
                                                 <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                                 <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                             </textFieldCell>
                                         </textField>
-                                        <secureTextField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="mPC-tX-KLR">
-                                            <rect key="frame" x="154" y="20" width="281" height="22"/>
-                                            <secureTextFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" drawsBackground="YES" usesSingleLineMode="YES" id="GAz-Tz-Bb5">
+                                        <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="9gf-vS-mG9">
+                                            <rect key="frame" x="142" y="20" width="293" height="25"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="25" id="GO6-OG-X8D"/>
+                                            </constraints>
+                                            <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="pM0-JR-zFm">
                                                 <font key="font" metaFont="system"/>
                                                 <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                                 <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
-                                                <allowedInputSourceLocales>
-                                                    <string>NSAllRomanInputSourcesLocaleIdentifier</string>
-                                                </allowedInputSourceLocales>
-                                            </secureTextFieldCell>
-                                        </secureTextField>
+                                            </textFieldCell>
+                                        </textField>
                                     </subviews>
                                     <constraints>
                                         <constraint firstItem="Zrb-Cd-7tK" firstAttribute="leading" secondItem="kaP-My-uwW" secondAttribute="leading" constant="20" id="5Kw-36-1yp"/>
-                                        <constraint firstItem="mPC-tX-KLR" firstAttribute="top" secondItem="kaP-My-uwW" secondAttribute="top" constant="20" id="BuG-qP-2Sl"/>
-                                        <constraint firstItem="mPC-tX-KLR" firstAttribute="leading" secondItem="Zrb-Cd-7tK" secondAttribute="trailing" constant="20" id="Dd3-1y-qjS"/>
-                                        <constraint firstItem="mPC-tX-KLR" firstAttribute="centerY" secondItem="Zrb-Cd-7tK" secondAttribute="centerY" id="NOr-30-9dB"/>
-                                        <constraint firstAttribute="bottom" secondItem="mPC-tX-KLR" secondAttribute="bottom" constant="20" id="XFa-X9-u4U"/>
-                                        <constraint firstAttribute="trailing" secondItem="mPC-tX-KLR" secondAttribute="trailing" constant="20" id="brb-wa-XAL"/>
+                                        <constraint firstAttribute="bottom" secondItem="9gf-vS-mG9" secondAttribute="bottom" constant="20" id="Asf-Xc-j3K"/>
+                                        <constraint firstAttribute="trailing" secondItem="9gf-vS-mG9" secondAttribute="trailing" constant="20" id="Ga4-fS-Uvp"/>
+                                        <constraint firstItem="9gf-vS-mG9" firstAttribute="top" secondItem="kaP-My-uwW" secondAttribute="top" constant="20" id="eRd-6B-qCi"/>
+                                        <constraint firstItem="9gf-vS-mG9" firstAttribute="leading" secondItem="Zrb-Cd-7tK" secondAttribute="trailing" constant="8" id="ew3-fU-fZt"/>
+                                        <constraint firstItem="9gf-vS-mG9" firstAttribute="centerY" secondItem="Zrb-Cd-7tK" secondAttribute="centerY" id="nCh-Hb-uVq"/>
                                     </constraints>
                                 </view>
                             </box>
                             <box title="Telegram Bot" translatesAutoresizingMaskIntoConstraints="NO" id="kem-1m-GE1">
-                                <rect key="frame" x="17" y="57" width="459" height="121"/>
+                                <rect key="frame" x="17" y="57" width="459" height="127"/>
                                 <view key="contentView" id="Zn4-Ng-LSa">
-                                    <rect key="frame" x="2" y="2" width="455" height="104"/>
+                                    <rect key="frame" x="2" y="2" width="455" height="110"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
                                         <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="n8L-hZ-8B7">
-                                            <rect key="frame" x="18" y="62" width="101" height="22"/>
+                                            <rect key="frame" x="18" y="69" width="101" height="17"/>
                                             <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Telegram Bot ID" id="kxy-sA-gGt">
                                                 <font key="font" metaFont="system"/>
                                                 <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                                 <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                             </textFieldCell>
                                         </textField>
-                                        <secureTextField verticalHuggingPriority="750" verticalCompressionResistancePriority="751" translatesAutoresizingMaskIntoConstraints="NO" id="H6J-0G-VZd">
-                                            <rect key="frame" x="137" y="62" width="298" height="22"/>
-                                            <constraints>
-                                                <constraint firstAttribute="width" constant="298" id="3pK-Di-7wY"/>
-                                                <constraint firstAttribute="height" constant="22" id="yJi-Be-9LN"/>
-                                            </constraints>
-                                            <secureTextFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" drawsBackground="YES" usesSingleLineMode="YES" id="vIW-Fb-S3G">
-                                                <font key="font" metaFont="system"/>
-                                                <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
-                                                <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
-                                                <allowedInputSourceLocales>
-                                                    <string>NSAllRomanInputSourcesLocaleIdentifier</string>
-                                                </allowedInputSourceLocales>
-                                            </secureTextFieldCell>
-                                        </secureTextField>
-                                        <secureTextField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="SZO-CW-ZZ5">
-                                            <rect key="frame" x="137" y="20" width="298" height="22"/>
-                                            <constraints>
-                                                <constraint firstAttribute="height" constant="22" id="11C-o5-B8g"/>
-                                                <constraint firstAttribute="width" constant="298" id="sJZ-j5-K9S"/>
-                                            </constraints>
-                                            <secureTextFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" drawsBackground="YES" usesSingleLineMode="YES" id="Jdc-M1-XCP">
-                                                <font key="font" metaFont="system"/>
-                                                <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
-                                                <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
-                                                <allowedInputSourceLocales>
-                                                    <string>NSAllRomanInputSourcesLocaleIdentifier</string>
-                                                </allowedInputSourceLocales>
-                                            </secureTextFieldCell>
-                                        </secureTextField>
                                         <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="njr-CH-oon">
-                                            <rect key="frame" x="18" y="20" width="109" height="22"/>
+                                            <rect key="frame" x="18" y="24" width="109" height="17"/>
                                             <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Telegram Chat ID" id="PSk-Qi-3sf">
                                                 <font key="font" metaFont="system"/>
                                                 <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                                 <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                             </textFieldCell>
                                         </textField>
+                                        <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="vbb-eU-2aJ">
+                                            <rect key="frame" x="137" y="65" width="298" height="25"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="25" id="pcG-tg-fbw"/>
+                                            </constraints>
+                                            <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="ENy-NV-SFR">
+                                                <font key="font" metaFont="system"/>
+                                                <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                            </textFieldCell>
+                                        </textField>
+                                        <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="i3B-CR-t9f">
+                                            <rect key="frame" x="137" y="20" width="298" height="25"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="25" id="wWG-9e-FAY"/>
+                                            </constraints>
+                                            <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="2tN-ZL-AKs">
+                                                <font key="font" metaFont="system"/>
+                                                <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                            </textFieldCell>
+                                        </textField>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstAttribute="trailing" secondItem="SZO-CW-ZZ5" secondAttribute="trailing" constant="20" id="2uY-fr-tKq"/>
-                                        <constraint firstItem="H6J-0G-VZd" firstAttribute="leading" secondItem="n8L-hZ-8B7" secondAttribute="trailing" constant="20" id="6Io-OY-XdD"/>
-                                        <constraint firstItem="H6J-0G-VZd" firstAttribute="centerY" secondItem="n8L-hZ-8B7" secondAttribute="centerY" id="9NR-vI-9An"/>
-                                        <constraint firstItem="SZO-CW-ZZ5" firstAttribute="centerY" secondItem="njr-CH-oon" secondAttribute="centerY" id="BTf-bL-2gN"/>
-                                        <constraint firstItem="H6J-0G-VZd" firstAttribute="top" secondItem="Zn4-Ng-LSa" secondAttribute="top" constant="20" id="C7w-8m-SRq"/>
-                                        <constraint firstAttribute="trailing" secondItem="H6J-0G-VZd" secondAttribute="trailing" constant="20" id="Isf-Va-e40"/>
-                                        <constraint firstItem="SZO-CW-ZZ5" firstAttribute="top" secondItem="H6J-0G-VZd" secondAttribute="bottom" constant="20" id="PXB-h3-aQE"/>
-                                        <constraint firstItem="n8L-hZ-8B7" firstAttribute="top" secondItem="Zn4-Ng-LSa" secondAttribute="top" constant="20" id="TSN-N4-nIq"/>
-                                        <constraint firstAttribute="bottom" secondItem="SZO-CW-ZZ5" secondAttribute="bottom" constant="20" id="Zbp-3e-qWF"/>
+                                        <constraint firstItem="i3B-CR-t9f" firstAttribute="centerY" secondItem="njr-CH-oon" secondAttribute="centerY" id="03q-dE-7P8"/>
+                                        <constraint firstItem="vbb-eU-2aJ" firstAttribute="centerY" secondItem="n8L-hZ-8B7" secondAttribute="centerY" id="7yX-Sk-BRp"/>
+                                        <constraint firstAttribute="bottom" secondItem="i3B-CR-t9f" secondAttribute="bottom" constant="20" id="99F-e1-5g7"/>
+                                        <constraint firstItem="vbb-eU-2aJ" firstAttribute="leading" secondItem="n8L-hZ-8B7" secondAttribute="trailing" constant="20" id="B0M-EO-UU2"/>
+                                        <constraint firstItem="i3B-CR-t9f" firstAttribute="width" secondItem="vbb-eU-2aJ" secondAttribute="width" id="CBD-i0-ZCR"/>
+                                        <constraint firstItem="vbb-eU-2aJ" firstAttribute="top" secondItem="Zn4-Ng-LSa" secondAttribute="top" constant="20" id="Ta7-ia-ydc"/>
                                         <constraint firstItem="n8L-hZ-8B7" firstAttribute="leading" secondItem="Zn4-Ng-LSa" secondAttribute="leading" constant="20" id="agh-RB-dCc"/>
+                                        <constraint firstItem="i3B-CR-t9f" firstAttribute="top" secondItem="vbb-eU-2aJ" secondAttribute="bottom" constant="20" id="iPq-m0-5Tq"/>
                                         <constraint firstItem="njr-CH-oon" firstAttribute="leading" secondItem="Zn4-Ng-LSa" secondAttribute="leading" constant="20" id="lSW-ti-Hmw"/>
-                                        <constraint firstAttribute="bottom" secondItem="njr-CH-oon" secondAttribute="bottom" constant="20" id="uu6-F9-ASX"/>
+                                        <constraint firstAttribute="trailing" secondItem="i3B-CR-t9f" secondAttribute="trailing" constant="20" id="z0J-H2-ejO"/>
+                                        <constraint firstAttribute="trailing" secondItem="vbb-eU-2aJ" secondAttribute="trailing" constant="20" id="zBk-5p-rDS"/>
                                     </constraints>
                                 </view>
                             </box>
@@ -358,7 +349,7 @@
                                 </connections>
                             </button>
                             <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="yzM-Fk-iZF">
-                                <rect key="frame" x="18" y="293" width="457" height="68"/>
+                                <rect key="frame" x="18" y="302" width="457" height="68"/>
                                 <textFieldCell key="cell" sendsActionOnEndEditing="YES" id="76K-L9-AJ3">
                                     <font key="font" metaFont="system"/>
                                     <string key="title">Notifications will automatically be sent to the macOS Notification Center; additional methods of notification can be configured below. Click Save to start using the provided notification methods, or Test to send a test notification now.</string>
@@ -387,14 +378,14 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="pushbulletApiKey" destination="mPC-tX-KLR" id="pje-rD-RyY"/>
-                        <outlet property="telegramBotId" destination="H6J-0G-VZd" id="W9B-2q-peO"/>
-                        <outlet property="telegramChatId" destination="SZO-CW-ZZ5" id="UbL-GS-L3U"/>
+                        <outlet property="pushbulletApiKey" destination="9gf-vS-mG9" id="m6C-ES-0Lf"/>
+                        <outlet property="telegramBotId" destination="vbb-eU-2aJ" id="TKN-dr-xeo"/>
+                        <outlet property="telegramChatId" destination="i3B-CR-t9f" id="qfJ-e5-tte"/>
                     </connections>
                 </viewController>
                 <customObject id="jGZ-b0-Z3T" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1499" y="1128"/>
+            <point key="canvasLocation" x="1498.5" y="1132.5"/>
         </scene>
     </scenes>
 </document>
