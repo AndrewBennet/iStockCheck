@@ -7,24 +7,33 @@
 //
 
 import Foundation
+import Alamofire
+import SwiftyJSON
 
 class Notifier {
     
     var sendOSNotification = true
+    public var pushbulletApiKey: String?
+    public var telegramBotId: String?
+    public var telegramChatId: String?
     
-    func SendNotification(ofStock stock: Stock) {
+    func sendNotification(ofStock stock: Stock) {
+        sendNotification(title: "New Stock Available", text: "\(stock.model.ToDisplayName()) now available at \(AppleStore.storesById[stock.storeIdentifier]!)")
+    }
+    
+    func sendNotification(title: String, text: String){
         if sendOSNotification {
-            SendOSNotification(title: "New Stock Available", text: "\(stock.model.ToDisplayName()) now available at \(AppleStore.storesById[stock.storeIdentifier]!)")
+            sendOSNotification(title: title, text: text)
+        }
+        if pushbulletApiKey != nil {
+            sendPushbulletNotification(title: title, text: text)
+        }
+        if telegramChatId != nil && telegramBotId != nil {
+            sendTelegramNotification(text: text)
         }
     }
     
-    func SendNotification(title: String, text: String){
-        if sendOSNotification {
-            SendOSNotification(title: title, text: text)
-        }
-    }
-    
-    private func SendOSNotification(title: String, text: String) {
+    private func sendOSNotification(title: String, text: String) {
         let notification = NSUserNotification()
         notification.title = title
         notification.informativeText = text
@@ -32,5 +41,19 @@ class Notifier {
         notification.hasActionButton = true
         notification.actionButtonTitle = "View"
         NSUserNotificationCenter.default.deliver(notification)
+    }
+    
+    private func sendPushbulletNotification(title: String, text: String) {
+        let parameters: Parameters = [
+            "body": "\(text)",
+            "title": "\(title)",
+            "type": "note"
+        ]
+        
+        let _ = Alamofire.request("https://api.pushbullet.com/v2/pushes", method: .post, parameters: parameters, encoding: JSONEncoding.default, headers: HTTPHeaders(dictionaryLiteral: ("Access-Token", pushbulletApiKey!)))
+    }
+    
+    private func sendTelegramNotification(text: String) {
+        let _ = Alamofire.request("https://api.telegram.org/bot\(telegramBotId)/sendMessage?chat_id=\(telegramChatId)&text=\(text)")
     }
 }

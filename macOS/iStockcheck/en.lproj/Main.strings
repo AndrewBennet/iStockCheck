@@ -1,0 +1,78 @@
+
+/* Class = "NSMenuItem"; title = "iStockcheck"; ObjectID = "1Xt-HY-uBw"; */
+"1Xt-HY-uBw.title" = "iStockcheck";
+
+/* Class = "NSTextFieldCell"; title = "Select the models and Apple Stores to monitor, and set up the notification methods."; ObjectID = "3wF-Vr-qZ8"; */
+"3wF-Vr-qZ8.title" = "Select the models and Apple Stores to monitor, and set up the notification methods.";
+
+/* Class = "NSMenuItem"; title = "Quit iStockcheck"; ObjectID = "4sb-4s-VLi"; */
+"4sb-4s-VLi.title" = "Quit iStockcheck";
+
+/* Class = "NSMenuItem"; title = "About iStockcheck"; ObjectID = "5kV-Vb-QxS"; */
+"5kV-Vb-QxS.title" = "About iStockcheck";
+
+/* Class = "NSTextFieldCell"; title = "Notifications will automatically be sent to the Notification Center. Additional notifications options can be configured below."; ObjectID = "5u5-mL-mDv"; */
+"5u5-mL-mDv.title" = "Notifications will automatically be sent to the Notification Center. Additional notifications options can be configured below.";
+
+/* Class = "NSMenu"; title = "Main Menu"; ObjectID = "AYu-sK-qS6"; */
+"AYu-sK-qS6.title" = "Main Menu";
+
+/* Class = "NSMenuItem"; title = "Preferences…"; ObjectID = "BOF-NM-1cW"; */
+"BOF-NM-1cW.title" = "Preferences…";
+
+/* Class = "NSMenu"; title = "Help"; ObjectID = "F2S-fz-NVQ"; */
+"F2S-fz-NVQ.title" = "Help";
+
+/* Class = "NSMenuItem"; title = "iStockcheck Help"; ObjectID = "FKE-Sm-Kum"; */
+"FKE-Sm-Kum.title" = "iStockcheck Help";
+
+/* Class = "NSWindow"; title = "iStockcheck"; ObjectID = "IQv-IB-iLA"; */
+"IQv-IB-iLA.title" = "iStockcheck";
+
+/* Class = "NSMenuItem"; title = "Show All"; ObjectID = "Kd2-mp-pUS"; */
+"Kd2-mp-pUS.title" = "Show All";
+
+/* Class = "NSMenuItem"; title = "Services"; ObjectID = "NMo-om-nkz"; */
+"NMo-om-nkz.title" = "Services";
+
+/* Class = "NSMenuItem"; title = "Hide iStockcheck"; ObjectID = "Olw-nP-bQN"; */
+"Olw-nP-bQN.title" = "Hide iStockcheck";
+
+/* Class = "NSTextFieldCell"; title = "Telegram Chat ID"; ObjectID = "PSk-Qi-3sf"; */
+"PSk-Qi-3sf.title" = "Telegram Chat ID";
+
+/* Class = "NSMenuItem"; title = "Hide Others"; ObjectID = "Vdr-fp-XzO"; */
+"Vdr-fp-XzO.title" = "Hide Others";
+
+/* Class = "NSBox"; title = "Pushbullet"; ObjectID = "VqK-XO-9Wl"; */
+"VqK-XO-9Wl.title" = "Pushbullet";
+
+/* Class = "NSViewController"; title = "Models"; ObjectID = "WYS-zA-Mwh"; */
+"WYS-zA-Mwh.title" = "Models";
+
+/* Class = "NSViewController"; title = "Notifications"; ObjectID = "aev-2g-HgG"; */
+"aev-2g-HgG.title" = "Notifications";
+
+/* Class = "NSTextFieldCell"; title = "Pushbullet API Key"; ObjectID = "b5f-gI-9I8"; */
+"b5f-gI-9I8.title" = "Pushbullet API Key";
+
+/* Class = "NSButtonCell"; title = "Test Notifications"; ObjectID = "bbQ-NL-CCX"; */
+"bbQ-NL-CCX.title" = "Test Notifications";
+
+/* Class = "NSMenu"; title = "Services"; ObjectID = "hz9-B4-Xy5"; */
+"hz9-B4-Xy5.title" = "Services";
+
+/* Class = "NSBox"; title = "Telegram Bot"; ObjectID = "kem-1m-GE1"; */
+"kem-1m-GE1.title" = "Telegram Bot";
+
+/* Class = "NSTextFieldCell"; title = "Telegram Bot ID"; ObjectID = "kxy-sA-gGt"; */
+"kxy-sA-gGt.title" = "Telegram Bot ID";
+
+/* Class = "NSMenu"; title = "iStockcheck"; ObjectID = "uQy-DD-JDr"; */
+"uQy-DD-JDr.title" = "iStockcheck";
+
+/* Class = "NSViewController"; title = "Stores"; ObjectID = "w6j-QX-o4F"; */
+"w6j-QX-o4F.title" = "Stores";
+
+/* Class = "NSMenuItem"; title = "Help"; ObjectID = "wpr-3q-Mcd"; */
+"wpr-3q-Mcd.title" = "Help";

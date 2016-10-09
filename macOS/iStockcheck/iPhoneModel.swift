@@ -67,9 +67,9 @@ public class iPhoneModel : Hashable {
     public func ToDisplayName() -> String {
         var displayName = "iPhone 7"
         if PhoneSize == .iPhone7Plus{
-            displayName += "+"
+            displayName += " Plus"
         }
-        displayName += " "
+        displayName += ", "
         switch self.Colour{
         case .JetBlack:
             displayName += "Jet Black"
@@ -94,6 +94,20 @@ public class iPhoneModel : Hashable {
         return displayName
     }
     
+    public static func GetAllModels() -> [iPhoneModel] {
+        var models = [iPhoneModel]()
+        for phoneSize: PhoneSize in [.iPhone7, .iPhone7Plus] {
+            for colour: Colour in [.JetBlack, .Black, .Silver, .Gold, .RoseGold] {
+                for storage: StorageSize in [.Small, .Medium, .Large] {
+                    if colour != .JetBlack || storage != .Small {
+                        models.append(iPhoneModel(phoneSize: phoneSize, storageSize: storage, colour: colour))
+                    }
+                }
+            }
+        }
+        return models
+    }
+    
     public static func MatchingModels(phoneSizes: Set<PhoneSize>, colours: Set<Colour>, storages: Set<StorageSize>) -> Set<iPhoneModel> {
         var models = Set<iPhoneModel>()
         for phoneSize in phoneSizes{
@@ -106,5 +120,10 @@ public class iPhoneModel : Hashable {
             }
         }
         return models
+    }
+    
+    
+    public static func defaultKey(_ model: iPhoneModel) -> String {
+        return "iPhoneModelButton_\(model.ToDisplayName())"
     }
 }
