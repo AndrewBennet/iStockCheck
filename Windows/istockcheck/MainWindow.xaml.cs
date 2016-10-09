@@ -17,7 +17,7 @@ namespace com.andrewbennet.istockcheck {
 
 			// Restoration from minimisation
 			NotifyIcon ni = new NotifyIcon {
-				Icon = new Icon("Resources/Phone-64.ico"),
+				Icon = new Icon("Resources/istockcheck.ico"),
 				Visible = true
 			};
 			ni.DoubleClick += delegate {

@@ -5,6 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         mc:Ignorable="d"
         Title="iStockcheck" Height="70" Width="300" MaxHeight="70" MaxWidth="300" MinHeight="70" MinWidth="300"
+		Icon="Resources\istockcheck.ico"
         Loaded="MainWindow_OnLoaded">
     <Grid>
         <Label Name="WindowMessageLabel"/>
