@@ -25,7 +25,7 @@ SECRET_KEY = ')4!fys9bz+rqv+ww%3&ii-ko6+%a*gtl(+-#i0ybx_i8-o)#we'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['localhost', 'www.istockcheck.co.uk']
 
 
 # Application definition
