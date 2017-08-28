@@ -1,0 +1,31 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <link rel="stylesheet" type="text/css" href="{% static 'main/common.css' %}" />
+        <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+        {% block head %}
+        {% endblock %}
+    </head>
+
+    <body>
+        <h1>iStockCheck</h1>
+				<div class="centered nav-links">
+					<a href="{% url 'index' %}">Home</a>
+					•
+					<a href="{% url 'about' %}">About</a>
+					•
+					<a id="run-nav-link" href="{% url 'stockchecker' %}">Run</a>
+				</div>
+        <h2>
+            {% block navlinks %}
+            {% endblock %}
+        </h2>
+
+        <div class="page-content">
+            {% block pagecontent %}
+            {% endblock %}
+        </div>
+    </body>
+</html>

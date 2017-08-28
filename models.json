@@ -1,0 +1,199 @@
+[
+  {
+    "model": "main.iphonemodel",
+    "pk": 1,
+    "fields": {
+      "name": "iPhone 7 128GB Jet Black",
+      "model_number": "MN962B\/A"
+    }
+  },{
+    "model": "main.iphonemodel",
+    "pk": 2,
+    "fields": {
+      "name": "iPhone 7 256GB Jet Black",
+      "model_number": "MN9C2B\/A"
+    }
+  },{
+    "model": "main.iphonemodel",
+    "pk": 3,
+    "fields": {
+      "name": "iPhone 7 32GB Black",
+      "model_number": "MN8X2B\/A"
+    }
+  },{
+    "model": "main.iphonemodel",
+    "pk": 4,
+    "fields": {
+      "name": "iPhone 7 128GB Black",
+      "model_number": "MN922B\/A"
+    }
+  },{
+    "model": "main.iphonemodel",
+    "pk": 5,
+    "fields": {
+      "name": "iPhone 7 256GB Black",
+      "model_number": "MN972B\/A"
+    }
+  },{
+    "model": "main.iphonemodel",
+    "pk": 6,
+    "fields": {
+      "name": "iPhone 7 32GB Silver",
+      "model_number": "MN8Y2B\/A"
+    }
+  },{
+    "model": "main.iphonemodel",
+    "pk": 7,
+    "fields": {
+      "name": "iPhone 7 128GB Silver",
+      "model_number": "MN932B\/A"
+    }
+  },{
+    "model": "main.iphonemodel",
+    "pk": 8,
+    "fields": {
+      "name": "iPhone 7 256GB Silver",
+      "model_number": "MN982B\/A"
+    }
+  },{
+    "model": "main.iphonemodel",
+    "pk": 9,
+    "fields": {
+      "name": "iPhone 7 32GB Gold",
+      "model_number": "MN902B\/A"
+    }
+  },{
+    "model": "main.iphonemodel",
+    "pk": 10,
+    "fields": {
+      "name": "iPhone 7 128GB Gold",
+      "model_number": "MN942B\/A"
+    }
+  },{
+    "model": "main.iphonemodel",
+    "pk": 11,
+    "fields": {
+      "name": "iPhone 7 256GB Gold",
+      "model_number": "MN992B\/A"
+    }
+  },{
+    "model": "main.iphonemodel",
+    "pk": 12,
+    "fields": {
+      "name": "iPhone 7 32GB Rose Gold",
+      "model_number": "MN912B\/A"
+    }
+  },{
+    "model": "main.iphonemodel",
+    "pk": 13,
+    "fields": {
+      "name": "iPhone 7 128GB Rose Gold",
+      "model_number": "MN952B\/A"
+    }
+  },{
+    "model": "main.iphonemodel",
+    "pk": 14,
+    "fields": {
+      "name": "iPhone 7 256GB Rose Gold",
+      "model_number": "MN9A2B\/A"
+    }
+  },{
+    "model": "main.iphonemodel",
+    "pk": 15,
+    "fields": {
+      "name": "iPhone 7 Plus 128GB Jet Black",
+      "model_number": "MN4V2B\/A"
+    }
+  },{
+    "model": "main.iphonemodel",
+    "pk": 16,
+    "fields": {
+      "name": "iPhone 7 Plus 256GB Jet Black",
+      "model_number": "MN512B\/A"
+    }
+  },{
+    "model": "main.iphonemodel",
+    "pk": 17,
+    "fields": {
+      "name": "iPhone 7 Plus 32GB Black",
+      "model_number": "MNQM2B\/A"
+    }
+  },{
+    "model": "main.iphonemodel",
+    "pk": 18,
+    "fields": {
+      "name": "iPhone 7 Plus 128GB Black",
+      "model_number": "MN4M2B\/A"
+    }
+  },{
+    "model": "main.iphonemodel",
+    "pk": 19,
+    "fields": {
+      "name": "iPhone 7 Plus 256GB Black",
+      "model_number": "MN4W2B\/A"
+    }
+  },{
+    "model": "main.iphonemodel",
+    "pk": 20,
+    "fields": {
+      "name": "iPhone 7 Plus 32GB Silver",
+      "model_number": "MNQN2B\/A"
+    }
+  },{
+    "model": "main.iphonemodel",
+    "pk": 21,
+    "fields": {
+      "name": "iPhone 7 Plus 128GB Silver",
+      "model_number": "MN4P2B\/A"
+    }
+  },{
+    "model": "main.iphonemodel",
+    "pk": 22,
+    "fields": {
+      "name": "iPhone 7 Plus 256GB Silver",
+      "model_number": "MN4X2B\/A"
+    }
+  },{
+    "model": "main.iphonemodel",
+    "pk": 23,
+    "fields": {
+      "name": "iPhone 7 Plus 32GB Gold",
+      "model_number": "MNQP2B\/A"
+    }
+  },{
+    "model": "main.iphonemodel",
+    "pk": 24,
+    "fields": {
+      "name": "iPhone 7 Plus 128GB Gold",
+      "model_number": "MN4Q2B\/A"
+    }
+  },{
+    "model": "main.iphonemodel",
+    "pk": 25,
+    "fields": {
+      "name": "iPhone 7 Plus 256GB Gold",
+      "model_number": "MN4Y2B\/A"
+    }
+  },{
+    "model": "main.iphonemodel",
+    "pk": 26,
+    "fields": {
+      "name": "iPhone 7 Plus 32GB Rose Gold",
+      "model_number": "MNQQ2B\/A"
+    }
+  },{
+    "model": "main.iphonemodel",
+    "pk": 27,
+    "fields": {
+      "name": "iPhone 7 Plus 128GB Rose Gold",
+      "model_number": "MN4U2B\/A"
+    }
+  },{
+    "model": "main.iphonemodel",
+    "pk": 28,
+    "fields": {
+      "name": "iPhone 7 Plus 128GB Rose Gold",
+      "model_number": "MN502B\/A"
+    }
+  }
+]

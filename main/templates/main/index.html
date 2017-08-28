@@ -1,0 +1,24 @@
+{% extends 'main/base.html' %}
+{% load static %}
+
+{% block head %}
+    <title>About iStockCheck - free realtime notifications of Apple Store iPhone 8 stock levels</title>
+{% endblock %}
+
+{% block pagecontent %}
+	<div class="centered subhead">
+		<p>
+		Get free, realtime notifictions of new iPhone 8 stock availability in UK Apple Stores.
+	</p>
+	<p>
+		To start checking for stock, click the link below, select the models and stores you are interested in, and leave the page open.
+</p>
+<p>
+		You will get an alert when any stock is found.
+	</p>
+	</div>
+	<br/><br/>
+		<div>
+				<h2><a id="start-checking-stock" href="{% url 'stockchecker' %}">Start Checking Stock</a></h2>
+    </div>
+{% endblock %}

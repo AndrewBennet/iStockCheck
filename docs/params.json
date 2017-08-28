@@ -1,6 +1,0 @@
-{
-  "name": "iStockcheck",
-  "tagline": "iPhone 7 stock availability monitor",
-  "body": "### iPhone 7 availability checker\r\nSelect which iPhone 7 variants you are hunting for, and the U.K. Apple Stores to search in. iStockcheck runs in the background, checking for new iPhone 7 pickup availability every minute.\r\n\r\n### Notifications\r\nAs soon as there is an available pickup slot, iStockcheck sends a notification. Additionally, leave iStockcheck running and receive notifications on your smartphone, via [Pushbullet](https://pushbullet.com) or [Telegram](https://telegram.org).\r\n\r\n### Support or Contact\r\nHaving trouble with iStockcheck? Contact @AndrewBennet, or raise an issue on the GitHub page.\r\n",
-  "note": "Don't delete this file! It's used internally to help with page regeneration."
-}

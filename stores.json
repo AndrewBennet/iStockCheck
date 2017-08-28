@@ -1,0 +1,155 @@
+[
+  {
+    "model": "main.applestore",
+    "pk": 1,
+    "fields": {
+      "name": "Apple Watch at Selfridges",
+      "id_number": "R659",
+      "updated_when": "2017-08-12T20:59:40.796Z"
+    }
+  },{
+    "model": "main.applestore",
+    "pk": 2,
+    "fields": {
+      "name": "Bentall Centre",
+      "id_number": "R227",
+      "updated_when": "2017-08-12T20:59:40.796Z"
+    }
+  },{
+    "model": "main.applestore",
+    "pk": 3,
+    "fields": {
+      "name": "Bluewater",
+      "id_number": "R113",
+      "updated_when": "2017-08-12T20:59:40.796Z"
+    }
+  },{
+    "model": "main.applestore",
+    "pk": 4,
+    "fields": {
+      "name": "Braehead",
+      "id_number": "R340",
+      "updated_when": "2017-08-12T20:59:40.796Z"
+    }
+  },{
+    "model": "main.applestore",
+    "pk": 5,
+    "fields": {
+      "name": "Brent Cross",
+      "id_number": "R163",
+      "updated_when": "2017-08-12T20:59:40.796Z"
+    }
+  },{
+    "model": "main.applestore",
+    "pk": 6,
+    "fields": {
+      "name": "Bromley",
+      "id_number": "R496",
+      "updated_when": "2017-08-12T20:59:40.796Z"
+    }
+  },{
+    "model": "main.applestore",
+    "pk": 7,
+    "fields": {
+      "name": "Buchanan Street",
+      "id_number": "R135",
+      "updated_when": "2017-08-12T20:59:40.796Z"
+    }
+  },{
+    "model": "main.applestore",
+    "pk": 8,
+    "fields": {
+      "name": "Bullring",
+      "id_number": "R118",
+      "updated_when": "2017-08-12T20:59:40.796Z"
+    }
+  },{
+    "model": "main.applestore",
+    "pk": 9,
+    "fields": {
+      "name": "Braehead",
+      "id_number": "R340",
+      "updated_when": "2017-08-12T20:59:40.796Z"
+    }
+  },{
+    "model": "main.applestore",
+    "pk": 10,
+    "fields": {
+      "name": "Cabot Circus",
+      "id_number": "R252",
+      "updated_when": "2017-08-12T20:59:40.796Z"
+    }
+  },{
+    "model": "main.applestore",
+    "pk": 11,
+    "fields": {
+      "name": "Chapelfield",
+      "id_number": "R391",
+      "updated_when": "2017-08-12T20:59:40.796Z"
+    }
+  },{
+    "model": "main.applestore",
+    "pk": 12,
+    "fields": {
+      "name": "Churchill Square",
+      "id_number": "R244",
+      "updated_when": "2017-08-12T20:59:40.796Z"
+    }
+  },{
+    "model": "main.applestore",
+    "pk": 13,
+    "fields": {
+      "name": "Covent Garden",
+      "id_number": "R245",
+      "updated_when": "2017-08-12T20:59:40.796Z"
+    }
+  },{
+    "model": "main.applestore",
+    "pk": 14,
+    "fields": {
+      "name": "Cribbs Causeway",
+      "id_number": "R393",
+      "updated_when": "2017-08-12T20:59:40.796Z"
+    }
+  },{
+    "model": "main.applestore",
+    "pk": 15,
+    "fields": {
+      "name": "Drake Circus",
+      "id_number": "R545",
+      "updated_when": "2017-08-12T20:59:40.796Z"
+    }
+  },{
+    "model": "main.applestore",
+    "pk": 16,
+    "fields": {
+      "name": "Eldon Square",
+      "id_number": "R341",
+      "updated_when": "2017-08-12T20:59:40.796Z"
+    }
+  },{
+    "model": "main.applestore",
+    "pk": 17,
+    "fields": {
+      "name": "Festival Place",
+      "id_number": "R482",
+      "updated_when": "2017-08-12T20:59:40.796Z"
+    }
+  },{
+    "model": "main.applestore",
+    "pk": 18,
+    "fields": {
+      "name": "Grand Arcade",
+      "id_number": "R270",
+      "updated_when": "2017-08-12T20:59:40.796Z"
+    }
+  },{
+    "model": "main.applestore",
+    "pk": 19,
+    "fields": {
+      "name": "Highcross",
+      "id_number": "R308",
+      "updated_when": "2017-08-12T20:59:40.796Z"
+    }
+  }
+]

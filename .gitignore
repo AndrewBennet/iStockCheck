@@ -1,5 +1,1 @@
-*.sln.DotSettings.user
-obj/
-bin/
-.vs
-xcuserdata/
+__pycache__

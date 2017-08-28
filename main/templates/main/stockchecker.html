@@ -1,0 +1,45 @@
+{% extends 'main/base.html' %}
+{% load static %}
+
+{% block head %}
+    <script src="{% static 'main/notify.js' %}"></script>
+    <script src="{% static 'main/stockchecker.js' %}"></script>
+    <title>iStockCheck - checking for stock</title>
+{% endblock %}
+
+{% block pagecontent %}
+    <div id="status-text" class="centered subhead"></div>
+    <br/>
+    <div id="instruction-text" class="centered hidden">
+        Leave this page open to keep the stock check running.
+        <br/>Copy the current URL to preserve your selections.
+    </div>
+
+    <h3>iPhone Models</h3>
+    <div class="bordered">
+        <ul class="checkboxes">
+            {% for iphone in iphones %}
+            <li>
+                <label for="{{iphone.model_number}}">
+                    <input id="{{iphone.model_number}}" class="iphone-checkbox" type="checkbox" value="{{iphone.model_number}}" />
+                    {{iphone.name}}
+                </label>
+            </li>
+            {% endfor %}
+        </ul>
+    </div>
+
+    <h3>Apple Stores</h3>
+    <div class="bordered">
+        <ul class="checkboxes">
+            {% for store in stores %}
+            <li>
+                <label for="{{store.id_number}}">
+                    <input id="{{store.id_number}}" class="store-checkbox" type="checkbox" value="{{store.id_number}}" />
+                    {{store.name}}
+                </label>
+            </li>
+            {% endfor %}
+        </ul>
+    </div>
+{% endblock %}
