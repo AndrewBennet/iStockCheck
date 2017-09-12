@@ -1,7 +1,4 @@
 jQuery(function($){
-
-		$('#run-nav-link').attr('href', window.location);
-
     function getSelectedModels() {
         return $.map($('.iphone-checkbox:checked'), function(v, i) {
             return $(v).val();
@@ -44,11 +41,12 @@ jQuery(function($){
         }
     }
 
-    function startOrStopRunning(){
+    function updateState(){
         var selectedModels = getSelectedModels(),
             selectedStores = getSelectedStores();
 
         if(selectedModels.length !== 0 && selectedStores.length !== 0) {
+            stockcheckerRunning = true;
             clearInterval(stockchecker);
             clearInterval(dotDotDotIncrementer);
             $('#status-text').text('Checking for stock');
@@ -74,16 +72,22 @@ jQuery(function($){
             }, 60000)
         }
         else {
+            stockcheckerRunning = false;
             clearInterval(stockchecker);
             clearInterval(dotDotDotIncrementer);
             $('#status-text').text('Select at least one model and store to start checking for stock');
             $('#instruction-text').toggleClass('hidden', true);
         }
 
-        // Adjust the URL
+        // Adjust the URL, and just to be helpful, update the nav link to whatever it is now
         history.replaceState(null, null, '?models=' + selectedModels.join() + '&stores=' + selectedStores.join());
-				$('#run-nav-link').attr('href', window.location);
+        $('#run-nav-link').attr('href', window.location);
     }
+
+    // Update state when a checkbox is clicked
+    $('input[type="checkbox"]').click(function() {
+        updateState();
+    });
 
     var urlModels = getUrlParam('models'),
         urlStores = getUrlParam('stores'),
@@ -105,10 +109,12 @@ jQuery(function($){
         }, this);
     }
 
-    startOrStopRunning();
+    $(window).on('beforeunload', function () {
+        // If running, ask the user before exiting
+        if (stockcheckerRunning) {
+			return "Are you sure you want to stop checking for stock?"
+		}
+	});
 
-    // Update the URL when a checkbox is clicked
-    $('input[type="checkbox"]').click(function() {
-        startOrStopRunning();
-    });
+    updateState();
 })

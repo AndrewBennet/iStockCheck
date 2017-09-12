@@ -20,8 +20,9 @@
         <ul class="checkboxes">
             {% for iphone in iphones %}
             <li>
-                <label for="{{iphone.model_number}}">
-                    <input id="{{iphone.model_number}}" class="iphone-checkbox" type="checkbox" value="{{iphone.model_number}}" />
+                <!-- TODO: The models are using their PK id instead of model_id. This is until we have the model IDs -->
+                <label for="{{iphone.id}}">
+                    <input id="{{iphone.id}}" class="iphone-checkbox" type="checkbox" value="{{iphone.id}}" />
                     {{iphone.name}}
                 </label>
             </li>
