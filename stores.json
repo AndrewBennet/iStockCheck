@@ -3,15 +3,15 @@
     "model": "main.applestore",
     "pk": 1,
     "fields": {
-      "name": "Apple Watch at Selfridges",
-      "id_number": "R659",
+      "name": "London: White City",
+      "id_number": "R226",
       "updated_when": "2017-08-12T20:59:40.796Z"
     }
   },{
     "model": "main.applestore",
     "pk": 2,
     "fields": {
-      "name": "Bentall Centre",
+      "name": "Kingston: Bentall Centre",
       "id_number": "R227",
       "updated_when": "2017-08-12T20:59:40.796Z"
     }
@@ -19,7 +19,7 @@
     "model": "main.applestore",
     "pk": 3,
     "fields": {
-      "name": "Bluewater",
+      "name": "Greenhithe: Bluewater",
       "id_number": "R113",
       "updated_when": "2017-08-12T20:59:40.796Z"
     }
@@ -27,7 +27,7 @@
     "model": "main.applestore",
     "pk": 4,
     "fields": {
-      "name": "Braehead",
+      "name": "Glasgow: Braehead",
       "id_number": "R340",
       "updated_when": "2017-08-12T20:59:40.796Z"
     }
@@ -35,7 +35,7 @@
     "model": "main.applestore",
     "pk": 5,
     "fields": {
-      "name": "Brent Cross",
+      "name": "London: Brent Cross",
       "id_number": "R163",
       "updated_when": "2017-08-12T20:59:40.796Z"
     }
@@ -43,7 +43,7 @@
     "model": "main.applestore",
     "pk": 6,
     "fields": {
-      "name": "Bromley",
+      "name": "London: Bromley",
       "id_number": "R496",
       "updated_when": "2017-08-12T20:59:40.796Z"
     }
@@ -51,7 +51,7 @@
     "model": "main.applestore",
     "pk": 7,
     "fields": {
-      "name": "Buchanan Street",
+      "name": "Glasgow: Buchanan Street",
       "id_number": "R135",
       "updated_when": "2017-08-12T20:59:40.796Z"
     }
@@ -59,23 +59,15 @@
     "model": "main.applestore",
     "pk": 8,
     "fields": {
-      "name": "Bullring",
+      "name": "Birmingham",
       "id_number": "R118",
-      "updated_when": "2017-08-12T20:59:40.796Z"
-    }
-  },{
-    "model": "main.applestore",
-    "pk": 9,
-    "fields": {
-      "name": "Braehead",
-      "id_number": "R340",
       "updated_when": "2017-08-12T20:59:40.796Z"
     }
   },{
     "model": "main.applestore",
     "pk": 10,
     "fields": {
-      "name": "Cabot Circus",
+      "name": "Bristol: Cabot Circus",
       "id_number": "R252",
       "updated_when": "2017-08-12T20:59:40.796Z"
     }
@@ -83,7 +75,7 @@
     "model": "main.applestore",
     "pk": 11,
     "fields": {
-      "name": "Chapelfield",
+      "name": "Norwich: Chapelfield",
       "id_number": "R391",
       "updated_when": "2017-08-12T20:59:40.796Z"
     }
@@ -91,7 +83,7 @@
     "model": "main.applestore",
     "pk": 12,
     "fields": {
-      "name": "Churchill Square",
+      "name": "Brighton: Churchill Square",
       "id_number": "R244",
       "updated_when": "2017-08-12T20:59:40.796Z"
     }
@@ -99,7 +91,7 @@
     "model": "main.applestore",
     "pk": 13,
     "fields": {
-      "name": "Covent Garden",
+      "name": "London: Covent Garden",
       "id_number": "R245",
       "updated_when": "2017-08-12T20:59:40.796Z"
     }
@@ -107,7 +99,7 @@
     "model": "main.applestore",
     "pk": 14,
     "fields": {
-      "name": "Cribbs Causeway",
+      "name": "Bristol: Cribbs Causeway",
       "id_number": "R393",
       "updated_when": "2017-08-12T20:59:40.796Z"
     }
@@ -115,7 +107,7 @@
     "model": "main.applestore",
     "pk": 15,
     "fields": {
-      "name": "Drake Circus",
+      "name": "Plymouth: Drake Circus",
       "id_number": "R545",
       "updated_when": "2017-08-12T20:59:40.796Z"
     }
@@ -123,7 +115,7 @@
     "model": "main.applestore",
     "pk": 16,
     "fields": {
-      "name": "Eldon Square",
+      "name": "Newcastle: Eldon Square",
       "id_number": "R341",
       "updated_when": "2017-08-12T20:59:40.796Z"
     }
@@ -131,7 +123,7 @@
     "model": "main.applestore",
     "pk": 17,
     "fields": {
-      "name": "Festival Place",
+      "name": "Basingstoke: Festival Place",
       "id_number": "R482",
       "updated_when": "2017-08-12T20:59:40.796Z"
     }
@@ -139,7 +131,7 @@
     "model": "main.applestore",
     "pk": 18,
     "fields": {
-      "name": "Grand Arcade",
+      "name": "Cambridge: Grand Arcade",
       "id_number": "R270",
       "updated_when": "2017-08-12T20:59:40.796Z"
     }
@@ -147,8 +139,168 @@
     "model": "main.applestore",
     "pk": 19,
     "fields": {
-      "name": "Highcross",
+      "name": "Leicester: Highcross",
       "id_number": "R308",
+      "updated_when": "2017-08-12T20:59:40.796Z"
+    }
+  },{
+    "model": "main.applestore",
+    "pk": 20,
+    "fields": {
+      "name": "Grays: Lakeside",
+      "id_number": "R242",
+      "updated_when": "2017-08-12T20:59:40.796Z"
+    }
+  },{
+    "model": "main.applestore",
+    "pk": 21,
+    "fields": {
+      "name": "Liverpool ONE",
+      "id_number": "R239",
+      "updated_when": "2017-08-12T20:59:40.796Z"
+    }
+  },{
+    "model": "main.applestore",
+    "pk": 22,
+    "fields": {
+      "name": "Manchester Arndale",
+      "id_number": "R215",
+      "updated_when": "2017-08-12T20:59:40.796Z"
+    }
+  },{
+    "model": "main.applestore",
+    "pk": 23,
+    "fields": {
+      "name": "Sheffield: Meadowhall",
+      "id_number": "R153",
+      "updated_when": "2017-08-12T20:59:40.796Z"
+    }
+  },{
+    "model": "main.applestore",
+    "pk": 24,
+    "fields": {
+      "name": "Gateshead: Metrocentre",
+      "id_number": "R423",
+      "updated_when": "2017-08-12T20:59:40.796Z"
+    }
+  },{
+    "model": "main.applestore",
+    "pk": 25,
+    "fields": {
+      "name": "Milton Keynes",
+      "id_number": "R269",
+      "updated_when": "2017-08-12T20:59:40.796Z"
+    }
+  },{
+    "model": "main.applestore",
+    "pk": 26,
+    "fields": {
+      "name": "Edinburgh: Princes Street",
+      "id_number": "R328",
+      "updated_when": "2017-08-12T20:59:40.796Z"
+    }
+  },{
+    "model": "main.applestore",
+    "pk": 27,
+    "fields": {
+      "name": "Exeter: Princesshay",
+      "id_number": "R279",
+      "updated_when": "2017-08-12T20:59:40.796Z"
+    }
+  },{
+    "model": "main.applestore",
+    "pk": 28,
+    "fields": {
+      "name": "London: Regent Street",
+      "id_number": "R092",
+      "updated_when": "2017-08-12T20:59:40.796Z"
+    }
+  },{
+    "model": "main.applestore",
+    "pk": 29,
+    "fields": {
+      "name": "Bath: SouthGate",
+      "id_number": "R335",
+      "updated_when": "2017-08-12T20:59:40.796Z"
+    }
+  },{
+    "model": "main.applestore",
+    "pk": 30,
+    "fields": {
+      "name": "Cardiff: St David's 2",
+      "id_number": "R334",
+      "updated_when": "2017-08-12T20:59:40.796Z"
+    }
+  },{
+    "model": "main.applestore",
+    "pk": 31,
+    "fields": {
+      "name": "London: Stratford City",
+      "id_number": "R410",
+      "updated_when": "2017-08-12T20:59:40.796Z"
+    }
+  },{
+    "model": "main.applestore",
+    "pk": 32,
+    "fields": {
+      "name": "Reading: The Oracle",
+      "id_number": "R176",
+      "updated_when": "2017-08-12T20:59:40.796Z"
+    }
+  },{
+    "model": "main.applestore",
+    "pk": 33,
+    "fields": {
+      "name": "Solihull: Touchwood Centre",
+      "id_number": "R255",
+      "updated_when": "2017-08-12T20:59:40.796Z"
+    }
+  },{
+    "model": "main.applestore",
+    "pk": 35,
+    "fields": {
+      "name": "Leeds: Trinity Leeds",
+      "id_number": "R372",
+      "updated_when": "2017-08-12T20:59:40.796Z"
+    }
+  },{
+    "model": "main.applestore",
+    "pk": 36,
+    "fields": {
+      "name": "Manchester: Trafford Centre",
+      "id_number": "R136",
+      "updated_when": "2017-08-12T20:59:40.796Z"
+    }
+  },{
+    "model": "main.applestore",
+    "pk": 37,
+    "fields": {
+      "name": "Aberdeen: Union Square",
+      "id_number": "R363",
+      "updated_when": "2017-08-12T20:59:40.796Z"
+    }
+  },{
+    "model": "main.applestore",
+    "pk": 38,
+    "fields": {
+      "name": "Belfast: Victoria Square",
+      "id_number": "R313",
+      "updated_when": "2017-08-12T20:59:40.796Z"
+    }
+  },{
+    "model": "main.applestore",
+    "pk": 39,
+    "fields": {
+      "name": "Watford",
+      "id_number": "R527",
+      "updated_when": "2017-08-12T20:59:40.796Z"
+    }
+  },{
+    "model": "main.applestore",
+    "pk": 40,
+    "fields": {
+      "name": "Southampton",
+      "id_number": "R174",
       "updated_when": "2017-08-12T20:59:40.796Z"
     }
   }
