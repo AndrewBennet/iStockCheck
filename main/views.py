@@ -41,7 +41,7 @@ def stockcheck(request):
             update_stock(store)
 
         # Add the model IDs which we are interested in, and are in stock, to the response object
-        response[store.id_number] = [model.model_number for model in store.models_in_stock.all() if model.model_number in model_ids]
+        response[store.name] = [model.name for model in store.models_in_stock.all() if model.model_number in model_ids]
 
     # Return the in-stock models as a JSON object
     return HttpResponse(json.dumps(response))
@@ -52,7 +52,7 @@ def batch(seq, size):
 
 # Update stock information from Apple's servers
 def update_stock(store):
-    all_models = list(IphoneModel.objects.all())
+    all_models = [model for model in list(IphoneModel.objects.all()) if not model.model_number.startswith("?")]
 
     # We have to get the stock info in batches of 10
     for model_batch in batch(all_models, 10):
@@ -65,7 +65,12 @@ def update_stock(store):
 
         # Load some JSON from the Apple website
         request = requests.get("https://www.apple.com/uk/shop/retail/pickup-message?" + query_string)
-        parts_availability = request.json()["body"]["stores"][0]["partsAvailability"]
+        try:
+            jsonResponse = request.json()
+            parts_availability = jsonResponse["body"]["stores"][0]["partsAvailability"]
+        except:
+            # eek
+            return
 
         # For each model, check whether it is in stock, and update the store accordingly
         for model in model_batch:

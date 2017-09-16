@@ -17,14 +17,6 @@
     }
   },{
     "model": "main.applestore",
-    "pk": 3,
-    "fields": {
-      "name": "Greenhithe: Bluewater",
-      "id_number": "R113",
-      "updated_when": "2017-08-12T20:59:40.796Z"
-    }
-  },{
-    "model": "main.applestore",
     "pk": 4,
     "fields": {
       "name": "Glasgow: Braehead",

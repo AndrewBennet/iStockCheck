@@ -31,12 +31,45 @@ jQuery(function($){
         }
     }
 
+    function arraysEqual(arr1, arr2) {
+        if(arr1.length !== arr2.length)
+            return false;
+        for(var i = arr1.length; i--;) {
+            if(arr1[i] !== arr2[i])
+                return false;
+        }
+        return true;
+    }
+
+    var storesToModels = {};
+
     function checkStock() {
         var models = getSelectedModels(),
             stores = getSelectedStores();
         if(models.length && stores.length) {
             $.get('stockcheck?stores=' + stores.join() + '&models=' + models.join(), function(data) {
-                notifyOrAlert('Stock Notification', data);
+                var responseJson = JSON.parse(data);
+                var displayHtml = "";
+                for(var store in responseJson) {
+                    var models = responseJson[store].join(', ');
+
+                    if (responseJson[store].length > 0){
+                        displayHtml += "<li>" + store + " - " + models + "</li>";
+                        if(!storesToModels[store] || !arraysEqual(storesToModels[store], responseJson[store])){
+                            //stock!
+                            notifyOrAlert('Stock at ' + store, models);
+                        }
+                    }
+                 }
+                 storesToModels = responseJson;
+
+                 // Now set up the stock display
+                 if(displayHtml === "") {
+                    $('#current-stock').html("Nothing found");
+                 }
+                 else {
+                    $('#current-stock').html(displayHtml);
+                 }
             });
         }
     }
@@ -58,7 +91,7 @@ jQuery(function($){
                 else {
                     dotDotDots += 1;
                 }
-                $('#status-text').text('Checking for stock' + Array(dotDotDots).join('.'));
+                $('#status-text').text('Monitoring stock' + Array(dotDotDots).join('.'));
             }, 800);
             if(notifySupported){
                 if(Notify.needsPermission) {
@@ -69,7 +102,7 @@ jQuery(function($){
             }
             stockchecker = setInterval(function(){
                 checkStock();
-            }, 60000)
+            }, 6000)
         }
         else {
             stockcheckerRunning = false;
