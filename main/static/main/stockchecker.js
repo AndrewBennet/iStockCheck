@@ -102,7 +102,7 @@ jQuery(function($){
             }
             stockchecker = setInterval(function(){
                 checkStock();
-            }, 6000)
+            }, 60000)
         }
         else {
             stockcheckerRunning = false;
