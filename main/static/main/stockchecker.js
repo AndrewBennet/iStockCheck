@@ -36,7 +36,7 @@ jQuery(function($){
             stores = getSelectedStores();
         if(models.length && stores.length) {
             $.get('stockcheck?stores=' + stores.join() + '&models=' + models.join(), function(data) {
-                //notifyOrAlert('New Stock at Stratford', 'iPhone 7 Plus 128GB Jet Black available')
+                notifyOrAlert('Stock Notification', data);
             });
         }
     }
@@ -115,6 +115,15 @@ jQuery(function($){
 			return "Are you sure you want to stop checking for stock?"
 		}
 	});
+
+    // Disable iPhone X...
+    $('.iphone-checkbox').each(function(index, element){
+        if(element.id.startsWith('?')) {
+            element.disabled = true;
+            // Eek, inline style.
+            $(element.parentElement).attr('style', 'color: gray;');
+        }
+    });
 
     updateState();
 })

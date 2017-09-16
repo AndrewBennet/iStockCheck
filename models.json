@@ -4,21 +4,21 @@
     "pk": 1,
     "fields": {
       "name": "iPhone 8 64GB Silver",
-      "model_number": "??"
+      "model_number": "MQ6H2B/A"
     }
   },{
     "model": "main.iphonemodel",
     "pk": 2,
     "fields": {
       "name": "iPhone 8 64GB Gold",
-      "model_number": "??"
+      "model_number": "MQ6J2B/A"
     }
   },{
     "model": "main.iphonemodel",
     "pk": 3,
     "fields": {
       "name": "iPhone 8 64GB Space Gray",
-      "model_number": "??"
+      "model_number": "MQ6G2B/A"
     }
   },
     {
@@ -26,42 +26,42 @@
     "pk": 4,
     "fields": {
       "name": "iPhone 8 256GB Silver",
-      "model_number": "??"
+      "model_number": "MQ7D2B/A"
     }
   },{
     "model": "main.iphonemodel",
     "pk": 5,
     "fields": {
       "name": "iPhone 8 256GB Gold",
-      "model_number": "??"
+      "model_number": "MQ7E2B/A"
     }
   },{
     "model": "main.iphonemodel",
     "pk": 6,
     "fields": {
       "name": "iPhone 8 256GB Space Gray",
-      "model_number": "??"
+      "model_number": "MQ7C2B/A"
     }
   },{
     "model": "main.iphonemodel",
     "pk": 7,
     "fields": {
       "name": "iPhone 8 Plus 64GB Silver",
-      "model_number": "??"
+      "model_number": "MQ8M2B/A"
     }
   },{
     "model": "main.iphonemodel",
     "pk": 8,
     "fields": {
       "name": "iPhone 8 Plus 64GB Gold",
-      "model_number": "??"
+      "model_number": "MQ8N2B/A"
     }
   },{
     "model": "main.iphonemodel",
     "pk": 9,
     "fields": {
       "name": "iPhone 8 Plus 64GB Space Gray",
-      "model_number": "??"
+      "model_number": "MQ8L2B/A"
     }
   },
     {
@@ -69,49 +69,49 @@
     "pk": 10,
     "fields": {
       "name": "iPhone 8 Plus 256GB Silver",
-      "model_number": "??"
+      "model_number": "MQ8Q2B/A"
     }
   },{
     "model": "main.iphonemodel",
     "pk": 11,
     "fields": {
       "name": "iPhone 8 Plus 256GB Gold",
-      "model_number": "??"
+      "model_number": "MQ8R2B/A"
     }
   },{
     "model": "main.iphonemodel",
     "pk": 12,
     "fields": {
       "name": "iPhone 8 Plus 256GB Space Gray",
-      "model_number": "??"
+      "model_number": "MQ8P2B/A"
     }
   },{
     "model": "main.iphonemodel",
     "pk": 13,
     "fields": {
       "name": "iPhone X 64GB Silver",
-      "model_number": "??"
+      "model_number": "?1"
     }
   },{
     "model": "main.iphonemodel",
     "pk": 14,
     "fields": {
       "name": "iPhone X 64GB Space Gray",
-      "model_number": "??"
+      "model_number": "?2"
     }
   },{
     "model": "main.iphonemodel",
     "pk": 15,
     "fields": {
       "name": "iPhone X 256GB Silver",
-      "model_number": "??"
+      "model_number": "?3"
     }
   },{
     "model": "main.iphonemodel",
     "pk": 16,
     "fields": {
       "name": "iPhone X 256GB Space Gray",
-      "model_number": "??"
+      "model_number": "?4"
     }
   }
 ]
