@@ -52,10 +52,8 @@ def batch(seq, size):
 
 # Update stock information from Apple's servers
 def update_stock(store):
-    all_models = [model for model in list(IphoneModel.objects.all()) if not model.model_number.startswith("?")]
-
     # We have to get the stock info in batches of 10
-    for model_batch in batch(all_models, 10):
+    for model_batch in batch(IphoneModel.objects.all(), 10):
         query_string = ""
 
         # Build a query string for the 10 iPhone models and an Apple Store

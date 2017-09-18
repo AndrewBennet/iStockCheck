@@ -21,13 +21,31 @@ jQuery(function($){
     }
 
     function notifyOrAlert(title, body) {
-        if(notifySupported && !Notify.needsPermission) {
-            new Notify(title, {
-                body: body
-            }).show();
+        if($('#use-browser-notification').is(':checked')) {
+            if(notifySupported && !Notify.needsPermission) {
+                new Notify(title, {
+                    body: body
+                }).show();
+            }
+            else {
+                alert(title + ': ' + body)
+            }
         }
-        else {
-            alert(title + ': ' + body)
+        if($('#pushbullet-access-token').val().length > 0) {
+            $.ajax({
+                url: 'https://api.pushbullet.com/v2/pushes',
+                type: 'post',
+                data: JSON.stringify({
+                    'body': body,
+                    'title': title,
+                    'type': 'note'
+                }),
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Access-Token': $('#pushbullet-access-token').val(),
+                },
+                dataType: 'json'
+            });
         }
     }
 
@@ -74,16 +92,27 @@ jQuery(function($){
         }
     }
 
+    function requestNotificationPermissionIfNecessary() {
+        if($('#use-browser-notification').is(':checked')) {
+            if(notifySupported){
+                if(Notify.needsPermission) {
+                    Notify.requestPermission(function(){
+                        notifyOrAlert('iStockCheck Notification', 'Notifications of new iPhone stock will be sent like this.');
+                    });
+                }
+            }
+        }
+    }
+
     function updateState(){
         var selectedModels = getSelectedModels(),
             selectedStores = getSelectedStores();
 
-        if(selectedModels.length !== 0 && selectedStores.length !== 0) {
+        if(selectedModels.length !== 0 && selectedStores.length !== 0 && ($('#use-browser-notification').prop('checked') || $('#pushbullet-access-token').val().length > 0)) {
             stockcheckerRunning = true;
             clearInterval(stockchecker);
             clearInterval(dotDotDotIncrementer);
-            $('#status-text').text('Checking for stock');
-            $('#instruction-text').toggleClass('hidden', false);
+            $('#status-text').text('Monitoring stock');
             dotDotDotIncrementer = setInterval(function(){
                 if(dotDotDots > 3) {
                     dotDotDots = 0;
@@ -93,13 +122,9 @@ jQuery(function($){
                 }
                 $('#status-text').text('Monitoring stock' + Array(dotDotDots).join('.'));
             }, 800);
-            if(notifySupported){
-                if(Notify.needsPermission) {
-                    Notify.requestPermission(function(){
-                        notifyOrAlert('iStockCheck Notification', 'Notifications of new iPhone stock will be sent like this.');
-                    });
-                }
-            }
+            $(document).attr("title", "iStockCheck - Monitoring Stock...");
+
+            requestNotificationPermissionIfNecessary();
             stockchecker = setInterval(function(){
                 checkStock();
             }, 60000)
@@ -108,12 +133,13 @@ jQuery(function($){
             stockcheckerRunning = false;
             clearInterval(stockchecker);
             clearInterval(dotDotDotIncrementer);
-            $('#status-text').text('Select at least one model and store to start checking for stock');
-            $('#instruction-text').toggleClass('hidden', true);
+            $('#status-text').text('Select at least one model and store, and set your notification settings, to start checking for stock');
+            $(document).attr("title", "iStockCheck");
         }
 
         // Adjust the URL, and just to be helpful, update the nav link to whatever it is now
-        history.replaceState(null, null, '?models=' + selectedModels.join() + '&stores=' + selectedStores.join());
+        history.replaceState(null, null, '?models=' + selectedModels.join() + '&stores=' + selectedStores.join()
+            + '&browserNotifications=' + $('#use-browser-notification').prop('checked') + '&accessToken=' + $('#pushbullet-access-token').val());
         $('#run-nav-link').attr('href', window.location);
     }
 
@@ -124,6 +150,8 @@ jQuery(function($){
 
     var urlModels = getUrlParam('models'),
         urlStores = getUrlParam('stores'),
+        useBrowserNotifications = getUrlParam('browserNotifications'),
+        pushbulletAccessToken = getUrlParam('accessToken'),
         notifySupported = !Notify.needsPermission || Notify.isSupported(),
         stockcheckerRunning = false,
         stockchecker,
@@ -142,6 +170,14 @@ jQuery(function($){
         }, this);
     }
 
+    if(useBrowserNotifications === "false") {
+        $('#use-browser-notification').prop('checked', false);
+    }
+
+    if(pushbulletAccessToken && pushbulletAccessToken.length > 0) {
+        $('#pushbullet-access-token').val(pushbulletAccessToken);
+    }
+
     $(window).on('beforeunload', function () {
         // If running, ask the user before exiting
         if (stockcheckerRunning) {
@@ -156,6 +192,20 @@ jQuery(function($){
             // Eek, inline style.
             $(element.parentElement).attr('style', 'color: gray;');
         }
+    });
+
+    $('#test-notifications').click(function() {
+        requestNotificationPermissionIfNecessary();
+        notifyOrAlert('iStockCheck Test Notification', 'Stock alerts will be sent like this.')
+    });
+
+    $('#use-browser-notifications').change(function(){
+        updateState();
+        requestNotificationPermissionIfNecessary();
+    });
+
+    $('#pushbullet-access-token').change(function(){
+        updateState();
     });
 
     updateState();

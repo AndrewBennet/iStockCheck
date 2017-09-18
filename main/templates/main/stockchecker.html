@@ -4,22 +4,46 @@
 {% block head %}
     <script src="{% static 'main/notify.js' %}"></script>
     <script src="{% static 'main/stockchecker.js' %}"></script>
-    <title>iStockCheck - checking for stock...</title>
+    <title>iStockCheck</title>
 {% endblock %}
 
 {% block pagecontent %}
+    <br/>
     <div id="status-text" class="centered subhead"></div>
     <br/>
-    <div id="instruction-text" class="centered hidden">
+    <div id="instruction-text" class="centered">
         Leave this page open to keep the stock check running.
         <br/>Copy the current URL to preserve your selections.
     </div>
 
     <h3>Current Stock</h3>
     <div class="bordered">
-        <ul id="current-stock">
+        <div id="current-stock" class="padded-box-contents">
             Nothing yet found
-        </ul>
+        </div>
+    </div>
+
+    <h3>Notification Settings</h3>
+    <div class="bordered">
+        <div class="padded-box-contents">
+            <label for="use-browser-notification">
+                Browser notifications:
+                <input id="use-browser-notification" type="checkbox" value="true" checked/>
+            </label>
+            <p/>
+            <label for="pushbullet-access-token">
+                <a href="https://www.pushbullet.com">Pushbullet</a> Access Token:
+                <input type="text" id="pushbullet-access-token" size="35" max-length="100"/>
+            </label>
+            <p/>
+            <input type="button" id="test-notifications" value="Test Notifications" />
+            <p/>
+            <span id="pushbullet-dislaimer">
+                Pushbullet Access Tokens can be generated on your Pushbullet <a href="https://www.pushbullet.com/#settings/account">Account Settings</a>.
+                <br/>
+                Your access token is never accessed by or shared with iStockCheck servers.
+            </span>
+        </div>
     </div>
 
     <h3>iPhone Models</h3>
@@ -52,7 +76,5 @@
 
     <p style="text-align: center;">
         <span style="font-size: 13px;"><a href="https://www.apple.com/iphone-x">iPhone X</a> stock checking coming soon.</span>
-        <br/>
-        <span style="font-size: 13px;">Remote notifications via <a href="https://www.pushbullet.com/">Pushbullet</a> coming soon.</span>
     </p>
 {% endblock %}

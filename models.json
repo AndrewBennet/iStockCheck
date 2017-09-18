@@ -90,28 +90,28 @@
     "pk": 13,
     "fields": {
       "name": "iPhone X 64GB Silver",
-      "model_number": "?1"
+      "model_number": "MQAD2B/A"
     }
   },{
     "model": "main.iphonemodel",
     "pk": 14,
     "fields": {
       "name": "iPhone X 64GB Space Gray",
-      "model_number": "?2"
+      "model_number": "MQAC2B/A"
     }
   },{
     "model": "main.iphonemodel",
     "pk": 15,
     "fields": {
       "name": "iPhone X 256GB Silver",
-      "model_number": "?3"
+      "model_number": "MQAG2B/A"
     }
   },{
     "model": "main.iphonemodel",
     "pk": 16,
     "fields": {
       "name": "iPhone X 256GB Space Gray",
-      "model_number": "?4"
+      "model_number": "MQAF2B/A"
     }
   }
 ]
