@@ -185,9 +185,9 @@ jQuery(function($){
 		}
 	});
 
-    // Disable iPhone X...
+    // Disable iPhone X... for now
     $('.iphone-checkbox').each(function(index, element){
-        if(element.id.startsWith('?')) {
+        if(element.id.startsWith('MQA')) {
             element.disabled = true;
             // Eek, inline style.
             $(element.parentElement).attr('style', 'color: gray;');
