@@ -49,6 +49,7 @@ class Command(BaseCommand):
 
             # Load some JSON from the Apple website
             self.logger.info('Requesting ' + query_string)
+            self.stdout.write('Requesting ' + query_string)
             request = requests.get("https://www.apple.com/uk/shop/retail/pickup-message?" + query_string)
             try:
                 jsonResponse = request.json()
@@ -63,6 +64,7 @@ class Command(BaseCommand):
                 model_pickup_quote = parts_availability[model.model_number]["storePickupQuote"]
                 if model_pickup_quote is not None and "unavailable" not in model_pickup_quote:
                     self.logger.info('Stock found for model ' + model.model_number + '. (Pickup quote: ' + model_pickup_quote + ')')
+                    self.stdout.write('Stock found for model ' + model.model_number + '. (Pickup quote: ' + model_pickup_quote + ')')
                     store.models_in_stock.add(model)
                 else:
                     store.models_in_stock.remove(model)
