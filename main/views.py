@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from django.http import HttpResponse
+from main.models import IphoneModel, AppleStore
 import json
 
 def index(request):
