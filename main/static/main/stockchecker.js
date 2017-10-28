@@ -185,15 +185,6 @@ jQuery(function($){
 		}
 	});
 
-    // Disable iPhone X... for now
-    $('.iphone-checkbox').each(function(index, element){
-        if(element.id.startsWith('MQA')) {
-            element.disabled = true;
-            // Eek, inline style.
-            $(element.parentElement).attr('style', 'color: gray;');
-        }
-    });
-
     $('#test-notifications').click(function() {
         requestNotificationPermissionIfNecessary();
         notifyOrAlert('iStockCheck Test Notification', 'Stock alerts will be sent like this.')
