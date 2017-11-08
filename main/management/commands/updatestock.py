@@ -39,6 +39,7 @@ class Command(BaseCommand):
     # Update stock information from Apple's servers
     def update_stock(self, store):
         # We have to get the stock info in batches of 10
+        # When we disabled iPhone 8 stock checking, this batch mechanism wasn't strictly necessary any more
         for model_batch in self.batch(IphoneModel.objects.all(), 10):
             query_string = ""
 
