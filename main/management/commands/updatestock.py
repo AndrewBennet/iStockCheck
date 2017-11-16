@@ -50,7 +50,7 @@ class Command(BaseCommand):
 
             # Load some JSON from the Apple website
             self.logger.info('Requesting ' + query_string)
-            time.sleep(2)
+            time.sleep(1)
             request = requests.get("https://www.apple.com/uk/shop/retail/pickup-message?" + query_string)
             try:
                 jsonResponse = request.json()
@@ -79,7 +79,7 @@ class Command(BaseCommand):
                 self.update_stock(store)
 
             self.stdout.write(self.style.SUCCESS('Stock update complete'))
-            time.sleep(60)
+            time.sleep(10)
     
     # Entrypoint
     def handle(self, *args, **options):

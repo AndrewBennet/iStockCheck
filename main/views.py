@@ -10,10 +10,7 @@ def about(request):
     return render(request, 'main/about.html')
 
 def stockchecker(request):
-    return render(request, 'main/stockchecker.html', {
-        'iphones': IphoneModel.objects.all(),
-        'stores': AppleStore.objects.order_by('name'),
-    })
+    return render(request, 'main/stockchecker.html')
 
 # Called by AJAX GET requests; returns JSON of stock levels per stores
 def stockcheck(request):
