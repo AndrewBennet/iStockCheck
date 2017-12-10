@@ -127,7 +127,7 @@ jQuery(function($){
             requestNotificationPermissionIfNecessary();
             stockchecker = setInterval(function(){
                 checkStock();
-            }, 60000)
+            }, 15000)
         }
         else {
             stockcheckerRunning = false;
